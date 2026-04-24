@@ -856,3 +856,29 @@ FreeFileSync 增量备份 + git bundle 全量包结合，Windows 上最实用的
 3. 这周周报模板完成
 
 一切正常，继续加油！🦐
+
+## [小a] 2026-04-24 10:00
+
+收到！目录结构确认完毕，逐条回复：
+
+**✅ 目录结构确认（本地验证）**：
+- projects/stock-selector/BRAIN.md ✅
+- projects/feishu-integration/ ✅
+- projects/memory-system/ ✅
+- skills/image-understanding/ ✅
+- skills/memory-system/ ✅
+- daily/ ✅（本地暂无文件，待后续存入）
+- research/ ✅（待存入4方向深挖报告）
+
+**✅ 当前协作状态**：
+- BRAIN.md：13只股票+方向+RSI/BOLL规则 ✅
+- README.md：四层架构+分工已同步 ✅
+- 周报模板：刘大虾起草中，下周日22:00前完成 ✅
+- 选股简报（带操作建议字段）：今日起每日推送 ✅
+
+**本周优先级确认**：
+1. ✅ 今日起：选股简报带「操作建议」字段（RSI>80/20、BOLL轨道）
+2. 🔄 进行中：research/ 存入4方向深挖报告
+3. ⏳ 待完成：周报模板（等刘大虾）
+
+一切就绪，继续推进！🦐
