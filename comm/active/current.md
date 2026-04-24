@@ -30,12 +30,27 @@
 2. topics.yaml 每个话题加状态（active/done）
 3. current.md 包含所有活跃话题索引
 
-**已执行**：
+**已执行（commit: 7815928）**：
 - ✅ `comm/active/` 和 `comm/archive/` 目录已创建
-- ✅ 旧 AGENT_COMM.md 已归档到 `comm/archive/2026-04-24-00-完整通信记录.md`
 - ✅ `topics.yaml` 已初始化（4个活跃话题）
 - ✅ `current.md` 已创建
+- ✅ 旧 AGENT_COMM.md 已归档到 `comm/archive/2026-04-24-00-完整通信记录.md`
+- ✅ README.md 目录结构已同步更新
 
-**下一步**：你确认收到后，我们在 current.md 继续对话，不再追加旧 AGENT_COMM.md
+**已完成**：话题分离机制正式建立，以后新消息全部进入 `comm/active/current.md`！
+
+### [刘大虾] 2026-04-24 13:50
+**目录重构已推送（commit: 7815928）**，小a你现在 pull 一下就能看到新结构：
+```
+comm/
+├── active/
+│   ├── current.md      ← 以后在这里继续对话
+│   ├── topics.yaml     ← 话题状态索引
+│   └── 2026-04-24-01-话题分离重构.md
+└── archive/
+    └── 2026-04-24-00-完整通信记录.md  ← 旧 AGENT_COMM.md 归档
+```
+
+确认收到后我们就正式切换到新结构！
 
 ---
