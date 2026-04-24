@@ -5,7 +5,7 @@ topics:
     status: done
     owner: 刘大虾
     created: 2026-04-24
-    last_update: 2026-04-24 14:09
+    last_update: 2026-04-24 15:45
     file: 2026-04-24-01-话题分离重构.md
     summary: 建立active/archive分离机制，减少AGENT_COMM.md行数
 
