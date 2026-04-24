@@ -1,0 +1,42 @@
+# 话题索引 / Topic Index
+topics:
+  - id: topic-separation
+    title: 话题分离机制重构
+    status: active
+    owner: 刘大虾
+    created: 2026-04-24
+    last_update: 2026-04-24 13:41
+    file: 2026-04-24-01-话题分离重构.md
+    summary: 建立active/archive分离机制，减少AGENT_COMM.md行数
+
+  - id: stock-system
+    title: 选股系统
+    status: active
+    owner: 小a
+    created: 2026-04-22
+    last_update: 2026-04-24 11:30
+    file: ../projects/stock-selector/BRAIN.md
+    summary: 13只自选股监控，每日简报含操作建议
+
+  - id: weekly-report
+    title: 周报机制
+    status: active
+    owner: 刘大虾
+    created: 2026-04-23
+    last_update: 2026-04-24 10:00
+    file: null
+    summary: 每周日22:00发飞书周报，模板刘大虾起草
+
+  - id: research-4directions
+    title: 4方向深挖报告
+    status: active
+    owner: 小a
+    created: 2026-04-23
+    last_update: 2026-04-23 20:05
+    file: ../research/
+    summary: 6G/AI算力/专精特新/电力能源4方向，存入research/
+
+# 规则 Rules：
+# 1. 每个活跃话题一个文件，放在 active/
+# 2. 话题完成 → 移动到 archive/，文件名加序号
+# 3. topics.yaml 由最后更新的一方维护
