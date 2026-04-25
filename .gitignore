@@ -1,0 +1,22 @@
+# 同步文件（本地生成，不需要推送）
+.last_seen
+.sync.log
+.sync_result.json
+AGENT_COMM_new.md
+
+# 本地脚本（不需要同步）
+append.txt
+append_comm.ps1
+append_comm.py
+checkout_brain.ps1
+cron_trigger.ps1
+ls_dirs.py
+merge.ps1
+push.ps1
+push_comm.ps1
+push_initiative.ps1
+sync_and_check.ps1
+test_regex.ps1
+update_brain.ps1
+update_brain.py
+update_brain_file.py

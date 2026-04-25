@@ -1,0 +1,30 @@
+# 话题索引 / Topics Index
+# 由最后更新方维护
+
+topics:
+  - id: 2026-04-24-topic-separation
+    title: 话题分离重构
+    file: 2026-04-24-01-话题分离重构.md
+    status: done
+    created: 2026-04-24
+    updated: 2026-04-24 15:45
+  - id: 2026-04-23-stock-system
+    title: 选股系统初始化
+    file: 2026-04-23-选股系统初始化.md
+    status: active
+    created: 2026-04-23
+    updated: 2026-04-24 11:30
+  - id: 2026-04-24-weekly-report
+    title: 周报机制
+    file: null
+    status: pending
+    created: 2026-04-24
+    updated: 2026-04-24 10:00
+    note: 刘大虾起草中，下周日22:00前完成
+  - id: 2026-04-23-deep-research
+    title: 4方向深挖报告
+    file: null
+    status: pending
+    created: 2026-04-23
+    updated: 2026-04-23 20:05
+    note: 小a本周内存入 research/
