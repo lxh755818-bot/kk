@@ -1,0 +1,411 @@
+{
+  "2026-03-28": {
+    "date": "2026-03-28",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": []
+  },
+  "2026-03-29": {
+    "date": "2026-03-29",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": []
+  },
+  "2026-03-30": {
+    "date": "2026-03-30",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-03-31": {
+    "date": "2026-03-31",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-01": {
+    "date": "2026-04-01",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-02": {
+    "date": "2026-04-02",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-03": {
+    "date": "2026-04-03",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-04": {
+    "date": "2026-04-04",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-05": {
+    "date": "2026-04-05",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-06": {
+    "date": "2026-04-06",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-07": {
+    "date": "2026-04-07",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-08": {
+    "date": "2026-04-08",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-09": {
+    "date": "2026-04-09",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-10": {
+    "date": "2026-04-10",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-11": {
+    "date": "2026-04-11",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-12": {
+    "date": "2026-04-12",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-13": {
+    "date": "2026-04-13",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-14": {
+    "date": "2026-04-14",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-15": {
+    "date": "2026-04-15",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-16": {
+    "date": "2026-04-16",
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": null,
+    "avg_latency_ms": 0,
+    "skills_tested": 0,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-17": {
+    "date": "2026-04-17",
+    "total": 13,
+    "passed": 10,
+    "failed": 3,
+    "expected_fail": 0,
+    "pass_rate": 76.9,
+    "avg_latency_ms": 3.0,
+    "skills_tested": 9,
+    "failed_skills": [
+      "apple-notes",
+      "apple-reminders",
+      "findmy"
+    ],
+    "expected_fail_skills": []
+  },
+  "2026-04-18": {
+    "date": "2026-04-18",
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": 100.0,
+    "avg_latency_ms": 330.0,
+    "skills_tested": 10,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-19": {
+    "date": "2026-04-19",
+    "total": 11,
+    "passed": 8,
+    "failed": 0,
+    "expected_fail": 3,
+    "pass_rate": 100.0,
+    "avg_latency_ms": 4.0,
+    "skills_tested": 10,
+    "failed_skills": [],
+    "expected_fail_skills": [
+      "github-auth",
+      "himalaya"
+    ]
+  },
+  "2026-04-20": {
+    "date": "2026-04-20",
+    "total": 12,
+    "passed": 9,
+    "failed": 2,
+    "expected_fail": 1,
+    "pass_rate": 81.8,
+    "avg_latency_ms": 1.0,
+    "skills_tested": 12,
+    "failed_skills": [
+      "SKILL",
+      "gif-search"
+    ],
+    "expected_fail_skills": [
+      "mcporter"
+    ]
+  },
+  "2026-04-21": {
+    "date": "2026-04-21",
+    "total": 10,
+    "passed": 9,
+    "failed": 0,
+    "expected_fail": 1,
+    "pass_rate": 100.0,
+    "avg_latency_ms": 3566.2,
+    "skills_tested": 9,
+    "failed_skills": [],
+    "expected_fail_skills": [
+      "songsee"
+    ]
+  },
+  "2026-04-22": {
+    "date": "2026-04-22",
+    "total": 12,
+    "passed": 11,
+    "failed": 1,
+    "expected_fail": 0,
+    "pass_rate": 91.7,
+    "avg_latency_ms": 1.0,
+    "skills_tested": 11,
+    "failed_skills": [
+      "modal"
+    ],
+    "expected_fail_skills": []
+  },
+  "2026-04-23": {
+    "date": "2026-04-23",
+    "total": 8,
+    "passed": 6,
+    "failed": 2,
+    "expected_fail": 0,
+    "pass_rate": 75.0,
+    "avg_latency_ms": 2.0,
+    "skills_tested": 8,
+    "failed_skills": [
+      "gguf-quantization",
+      "vllm"
+    ],
+    "expected_fail_skills": []
+  },
+  "2026-04-24": {
+    "date": "2026-04-24",
+    "total": 9,
+    "passed": 7,
+    "failed": 2,
+    "expected_fail": 0,
+    "pass_rate": 77.8,
+    "avg_latency_ms": 1.5,
+    "skills_tested": 9,
+    "failed_skills": [
+      "clip",
+      "intelligence-action-loop"
+    ],
+    "expected_fail_skills": []
+  },
+  "2026-04-25": {
+    "date": "2026-04-25",
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "expected_fail": 0,
+    "pass_rate": 100.0,
+    "avg_latency_ms": 1.5,
+    "skills_tested": 8,
+    "failed_skills": [],
+    "expected_fail_skills": []
+  },
+  "2026-04-26": {
+    "date": "2026-04-26",
+    "total": 7,
+    "passed": 6,
+    "failed": 1,
+    "expected_fail": 0,
+    "pass_rate": 85.7,
+    "avg_latency_ms": 0,
+    "skills_tested": 6,
+    "failed_skills": [
+      "xiaoa-persona-system"
+    ],
+    "expected_fail_skills": []
+  },
+  "2026-04-27": {
+    "date": "2026-04-27",
+    "total": 8,
+    "passed": 4,
+    "failed": 4,
+    "expected_fail": 0,
+    "pass_rate": 50.0,
+    "avg_latency_ms": 0,
+    "skills_tested": 6,
+    "failed_skills": [
+      "mlops/training/unsloth",
+      "xiaoa-persona-system"
+    ],
+    "expected_fail_skills": []
+  },
+  "2026-04-28": {
+    "date": "2026-04-28",
+    "total": 4,
+    "passed": 3,
+    "failed": 0,
+    "expected_fail": 1,
+    "pass_rate": 100.0,
+    "avg_latency_ms": 7720.0,
+    "skills_tested": 4,
+    "failed_skills": [],
+    "expected_fail_skills": [
+      "notion"
+    ]
+  }
+}

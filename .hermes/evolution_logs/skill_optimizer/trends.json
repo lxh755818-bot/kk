@@ -1,0 +1,482 @@
+{
+  "records": [
+    {
+      "timestamp": "2026-04-25T04:01:57.753777",
+      "skill": "mlops/training/axolotl",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T06:01:46.908791",
+      "skill": "grpo-rl-training",
+      "success": null,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {}
+    },
+    {
+      "timestamp": "2026-04-25T08:01:42.658795",
+      "skill": "peft",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T10:02:13.381962",
+      "skill": "mlops/training/pytorch-fsdp",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T12:01:03.183023",
+      "skill": "peft",
+      "success": true,
+      "status": "degraded",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 50.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T14:01:41.062371",
+      "skill": "mlops/training/grpo-rl-training",
+      "success": true,
+      "status": "?",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T16:02:47.043866",
+      "skill": "axolotl",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T18:02:00.544078",
+      "skill": "grpo-rl-training",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T20:01:55",
+      "skill": "mlops/training/peft",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 1,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 1,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-25T22:01:24.114056",
+      "skill": "mlops/training/pytorch-fsdp",
+      "success": true,
+      "status": "degraded",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 100.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-26T00:01:52.487693",
+      "skill": "peft-fine-tuning",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-26T10:02:10.475841",
+      "skill": "mlops/training/pytorch-fsdp",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-26T12:01:44.966923",
+      "skill": "pytorch-fsdp",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-26T14:01:37.052240",
+      "skill": "trl-fine-tuning",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-26T18:01:35",
+      "skill": "unsloth",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "load_time_status": "pass",
+        "error_rate_pct": 0,
+        "error_rate_status": "pass",
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-26T20:09:49.401094",
+      "skill": "xiaoa-persona-system",
+      "success": false,
+      "status": "degraded",
+      "error": "empty file",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "fail",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-26T22:01:47.603186",
+      "skill": "unsloth",
+      "success": true,
+      "status": "warning",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "fail",
+        "load_time_ms": 0,
+        "error_rate_pct": 0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-27T00:02:53.013976",
+      "skill": "unsloth",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-27T10:01:54.809894",
+      "skill": "mlops/training/unsloth",
+      "success": false,
+      "status": "healthy",
+      "error": "list index out of range",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-27T12:02:09.095277",
+      "skill": "xiaoa-persona-system",
+      "success": false,
+      "status": "degraded",
+      "error": "Empty SKILL.md - skeleton placeholder",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "fail",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 100.0,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-27T14:01:25.445130",
+      "skill": "xiaoa-persona-system",
+      "success": false,
+      "status": "degraded",
+      "error": "empty_file",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "fail",
+        "dep_available": "warning",
+        "load_time_ms": 0,
+        "error_rate_pct": 66.67,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-27T16:02:21.874300",
+      "skill": "mlops/xiaoa-persona-system",
+      "success": true,
+      "status": "degraded",
+      "error": "Empty file",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "fail",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-27T18:01:59.447196",
+      "skill": "xiaoa-persona-system",
+      "success": false,
+      "status": "degraded",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "fail",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 100.0,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-27T20:19:19.770995",
+      "skill": "note-taking/obsidian",
+      "success": true,
+      "status": "?",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-27T22:01:12.820650",
+      "skill": "english-learning-resources",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-28T00:01:34.227749",
+      "skill": "google-workspace",
+      "success": true,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-28T10:01:44.654076",
+      "skill": "maps",
+      "success": null,
+      "status": "healthy",
+      "error": "",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-28T12:01:32.447024",
+      "skill": "nano-pdf",
+      "success": true,
+      "status": "degraded",
+      "error": "nano-pdf CLI not installed",
+      "latency_ms": 0,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "fail",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    },
+    {
+      "timestamp": "2026-04-28T14:02:50.570684",
+      "skill": "notion",
+      "success": false,
+      "status": "degraded",
+      "error": "NOTION_API_KEY not configured",
+      "latency_ms": 7720,
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "fail",
+        "load_time_ms": 0,
+        "error_rate_pct": 100.0,
+        "perf_stable": "stable",
+        "output_valid": false
+      }
+    },
+    {
+      "timestamp": "2026-04-28T22:01:47.245163",
+      "skill": "powerpoint",
+      "category": "productivity/powerpoint",
+      "type": "sandbox",
+      "latency_ms": 0,
+      "success": true,
+      "output_valid": true,
+      "error": "",
+      "status": "healthy",
+      "audit": {
+        "doc_complete": "pass",
+        "dep_available": "pass",
+        "load_time_ms": 0,
+        "error_rate_pct": 0.0,
+        "perf_stable": "stable",
+        "output_valid": true
+      }
+    }
+  ]
+}
