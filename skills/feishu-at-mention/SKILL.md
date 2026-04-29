@@ -86,15 +86,17 @@ tail -50 ~/.hermes/logs/gateway.log | grep "Sending response"
 
 日志里能看到发送的字符数和目标 chat_id。
 
-## 已知 open_id（刘氏三虾群）
+## 已知 open_id（刘氏三虾群，2026-04-29 从日志中提取）
 
 | 名字 | open_id |
 |------|---------|
 | 刘大虾 | `ou_f94405b5e614c203a3d065d96c887d8d` |
 | 刘二虾 | `ou_63316887c3452efc66ca582749730b1e` |
-| 刘三虾 | `ou_562d9c89d4ac36f8ef4cd8a589b9d06c` |
+| 刘小豪（真人） | `ou_58af23392d77ef07bc19cb35bcec234d` |
+| 刘三虾 | `ou_cd54950b9cc1f83c4da1db346390f5f1` |
 | 小a | `ou_09f4d02c2ff58cf73ae46f7559737a96` |
-| 小豪 | `oc_2e5cc02fdda5aef65a7f9ca03127eda5`（私聊chat_id） |
+| 群聊 chat_id | `oc_5e9d682887056b9aa5db3bff44b743ff` |
+| 小豪私聊 chat_id | `oc_2e5cc02fdda5aef65a7f9ca03127eda5` |
 
 ---
 
