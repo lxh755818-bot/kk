@@ -1,0 +1,94 @@
+---
+name: feishu-at-mention
+description: 飞书群聊@提及机制 — 正确格式让被@人收到蓝色字体通知，含open_id查找和常见错误排查
+tags: [feishu, at-mention, group-chat, message-format]
+author: 小a
+license: MIT
+dependencies: []
+metadata:
+  hermes:
+    tags: [feishu, at-mention, group-chat]
+    platform: feishu
+---
+
+# 飞书群聊@提及机制
+
+## 核心原理
+
+飞书的@是一个 XML 标签格式，**被@的人会看到蓝色字体并收到通知**。
+
+```xml
+<at user_id="open_id或留空">显示的名字</at>
+```
+
+## 两种写法
+
+### 1️⃣ 留空让飞书自动解析（简单，但有时不稳定）
+
+```xml
+<at user_id="">刘二虾</at>
+```
+
+飞书会根据名字自动查找对应的 open_id，但**偶尔会解析失败**，导致对方收不到通知。
+
+### 2️⃣ 填入已验证的 open_id（推荐，更可靠）
+
+```xml
+<at user_id="ou_63316887c3452efc66ca582749730b1e">刘二虾</at>
+```
+
+**open_id 怎么找？**
+- 看日志里别人@你时的原始消息内容，里面包含 `open_id=ou_xxxxxxxxx`
+- 或者用飞书开放平台 API 查询用户信息
+
+## 实际发送示例
+
+```python
+send_message(
+    target="feishu:oc_2e5cc02fdda5aef65a7f9ca03127eda5",
+    message="<at user_id=\"ou_63316887c3452efc66ca582749730b1e\">刘二虾</at> 在吗？👀"
+)
+```
+
+## 验证成功的标志
+
+被@的人会看到：
+- 名字显示为**蓝色字体**（不是普通黑色）
+- 飞书推送**通知**（手机/PC会弹窗）
+
+## 常见错误
+
+| 错误写法 | 结果 |
+|---------|------|
+| `@刘二虾`（普通@符号） | 飞书不识别，视为普通文字 |
+| `<at>刘二虾</at>`（没有user_id属性） | 无效标签 |
+| `<at user_id="刘二虾">刘二虾</at>`（id填了名字） | 找不到用户，不触发通知 |
+| `user_id=123`（不是open_id格式） | 无效 |
+
+## 发送目标 chat_id
+
+- **群聊**：`receive_id_type='chat_id'`，chat_id 形如 `oc_xxxxxxxx`
+- **私聊**：`receive_id_type='open_id'`，用用户的 open_id
+
+## 调试技巧
+
+查看 gateway 日志确认消息是否发出：
+```bash
+tail -50 ~/.hermes/logs/gateway.log | grep "Sending response"
+```
+
+日志里能看到发送的字符数和目标 chat_id。
+
+## 已知 open_id（刘氏三虾群）
+
+| 名字 | open_id |
+|------|---------|
+| 刘大虾 | `ou_e35c5ab4826c9bee1f6db0b5e52289bb` |
+| 刘二虾 | `ou_63316887c3452efc66ca582749730b1e` |
+| 刘三虾 | `ou_562d9c89d4ac36f8ef4cd8a589b9d06c` |
+| 小a | `ou_09f4d02c2ff58cf73ae46f7559737a96` |
+| 小豪 | `oc_2e5cc02fdda5aef65a7f9ca03127eda5`（私聊chat_id） |
+
+---
+
+**关键记住**：`<at user_id="">名字</at>` id留空就行，飞书自动解析 💡
