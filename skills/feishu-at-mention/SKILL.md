@@ -38,8 +38,15 @@ metadata:
 ```
 
 **open_id 怎么找？**
-- 看日志里别人@你时的原始消息内容，里面包含 `open_id=ou_xxxxxxxxx`
-- 或者用飞书开放平台 API 查询用户信息
+- ✅ 正确方式：从**最近 gateway 日志**里看别人@你时的原始消息，里面包含 `open_id=ou_xxxxxxxxx`
+- ⚠️ 不能只靠记忆/技能里存的 ID——open_id 可能有两个，或者会变
+- 每次发@前，有条件的话先查一下日志确认
+
+**调试技巧**：
+```bash
+tail -100 ~/.hermes/logs/gateway.log | grep "Mentioned"
+```
+找 `[Mentioned: 名字 (open_id=ou_xxx)]` 那个就是对方当前的正确 ID。
 
 ## 实际发送示例
 
