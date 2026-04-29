@@ -66,51 +66,59 @@ if [ "$TASK_COUNT" = "0" ] || [ "$TASK_COUNT" = "" ]; then
     exit 0
 fi
 
-# ====== Step 2: 尝试认领第一个任务 ======
-FIRST_TASK=$(echo "$TASK_JSON" | python3 -c "
+# ====== Step 2: 遍历所有任务，直到认领成功或全部失败 ======
+log "Attempting to claim tasks from pool of $TASK_COUNT..."
+
+# 用 python 提取所有 task_id 到临时文件
+echo "$TASK_JSON" | python3 -c "
 import sys, json
 tasks = json.load(sys.stdin)
-if tasks:
-    print(tasks[0].get('task_id',''))
-" 2>/dev/null || echo "")
+for t in tasks:
+    tid = t.get('task_id', '')
+    if tid:
+        print(tid)
+" 2>/dev/null > "$VALIDATION_DIR/task_ids.txt"
 
-if [ -z "$FIRST_TASK" ]; then
-    log "No valid task_id found"
-    rm -f "$PID_FILE"
-    exit 0
-fi
+CLAIMED=0
+while IFS= read -r TASK_ID; do
+    [ -z "$TASK_ID" ] && continue
+    
+    log "Attempting to claim task: $TASK_ID"
 
-log "Attempting to claim task: $FIRST_TASK"
+    # 认领格式：不用 protocol envelope，直接 {"task_id": "...", "node_id": "..."}
+    CLAIM_RESP=$(curl -s -X POST "https://evomap.ai/a2a/task/claim" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer $NODE_SECRET" \
+        -d "{\"task_id\": \"$TASK_ID\", \"node_id\": \"$NODE_ID\"}" 2>/dev/null)
 
-# 认领格式：不用 protocol envelope，直接 {"task_id": "...", "node_id": "..."}
-CLAIM_RESP=$(curl -s -X POST "https://evomap.ai/a2a/task/claim" \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $NODE_SECRET" \
-    -d "{\"task_id\": \"$FIRST_TASK\", \"node_id\": \"$NODE_ID\"}" 2>/dev/null)
-
-CLAIM_STATUS=$(echo "$CLAIM_RESP" | python3 -c "
+    # 修复 Bug 1：同时检查 status 和 error 字段
+    CLAIM_STATUS=$(echo "$CLAIM_RESP" | python3 -c "
 import sys, json
 try:
     d = json.load(sys.stdin)
-    print(d.get('status', d.get('payload', {}).get('status', 'unknown'))
+    # 优先检查 error 字段（task_full 等场景）
+    err = d.get('error', '')
+    if err:
+        print('error_' + err)
+    else:
+        print(d.get('status', d.get('payload', {}).get('status', 'unknown')))
 except:
     print('parse_error')
 " 2>/dev/null || echo "error")
 
-log "Claim response status: $CLAIM_STATUS"
+    log "Claim response: $CLAIM_STATUS"
 
-if echo "$CLAIM_STATUS" | grep -qE "claimed|success|accepted"; then
-    log "Task claimed: $FIRST_TASK"
-    echo "$CLAIM_RESP" > "$VALIDATION_DIR/claimed_$FIRST_TASK.json"
-    
-    # ====== Step 3: 获取任务详情并执行验证 ======
-    TASK_DETAIL=$(curl -s "https://evomap.ai/a2a/task/$FIRST_TASK?sender_id=$NODE_ID&message_id=msg_\$(date +%s)" \
-        -H "Authorization: Bearer $NODE_SECRET" 2>/dev/null)
-    
-    echo "$TASK_DETAIL" > "$VALIDATION_DIR/task_detail_$FIRST_TASK.json"
-    
-    # 提取 signals 和 question
-    QUESTION=$(echo "$TASK_DETAIL" | python3 -c "
+    if echo "$CLAIM_STATUS" | grep -qE "claimed|success|accepted" && ! echo "$CLAIM_STATUS" | grep -q "error"; then
+        log "Task claimed: $TASK_ID"
+        echo "$CLAIM_RESP" > "$VALIDATION_DIR/claimed_$TASK_ID.json"
+        CLAIMED=1
+        
+        # ====== Step 3: 获取任务详情 ======
+        TASK_DETAIL=$(curl -s "https://evomap.ai/a2a/task/$TASK_ID?sender_id=$NODE_ID&message_id=msg_$(date +%s)" \
+            -H "Authorization: Bearer $NODE_SECRET" 2>/dev/null)
+        echo "$TASK_DETAIL" > "$VALIDATION_DIR/task_detail_$TASK_ID.json"
+        
+        QUESTION=$(echo "$TASK_DETAIL" | python3 -c "
 import sys, json
 try:
     d = json.load(sys.stdin)
@@ -119,8 +127,8 @@ try:
 except:
     print('')
 " 2>/dev/null || echo "")
-    
-    SIGNALS=$(echo "$TASK_DETAIL" | python3 -c "
+        
+        SIGNALS=$(echo "$TASK_DETAIL" | python3 -c "
 import sys, json
 try:
     d = json.load(sys.stdin)
@@ -129,20 +137,25 @@ try:
 except:
     print('')
 " 2>/dev/null || echo "")
-    
-    log "Task: $QUESTION"
-    log "Signals: $SIGNALS"
-    
-    # 验证后提交报告
-    # (这里需要根据任务类型执行实际验证，暂存原始数据供人工审查)
-    log "Task data saved for review, validation pending"
-    
-elif echo "$CLAIM_STATUS" | grep -qE "full|conflict|duplicate"; then
-    log "Task $FIRST_TASK is full/conflict, skipping"
-    echo "$CLAIM_RESP" > "$VALIDATION_DIR/claim_full_$FIRST_TASK.json"
-else
-    log "Claim failed: $CLAIM_RESP"
-    echo "$CLAIM_RESP" > "$VALIDATION_DIR/claim_failed_$FIRST_TASK.json"
+        
+        log "Task: $QUESTION"
+        log "Signals: $SIGNALS"
+        log "Task data saved, validation pending"
+        break
+
+    elif echo "$CLAIM_STATUS" | grep -qE "error_task_full|error_conflict|error_duplicate|full|conflict|duplicate"; then
+        log "Task $TASK_ID is full/conflict, trying next..."
+        echo "$CLAIM_RESP" > "$VALIDATION_DIR/claim_full_$TASK_ID.json"
+        continue
+    else
+        log "Claim failed for $TASK_ID: $CLAIM_RESP"
+        echo "$CLAIM_RESP" > "$VALIDATION_DIR/claim_failed_$TASK_ID.json"
+        continue
+    fi
+done < "$VALIDATION_DIR/task_ids.txt"
+
+if [ "$CLAIMED" = "0" ]; then
+    log "All tasks claim failed or none available"
 fi
 
 rm -f "$PID_FILE"
