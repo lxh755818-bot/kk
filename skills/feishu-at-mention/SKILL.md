@@ -83,7 +83,7 @@ tail -50 ~/.hermes/logs/gateway.log | grep "Sending response"
 
 | 名字 | open_id |
 |------|---------|
-| 刘大虾 | `ou_e35c5ab4826c9bee1f6db0b5e52289bb` |
+| 刘大虾 | `ou_f94405b5e614c203a3d065d96c887d8d` |
 | 刘二虾 | `ou_63316887c3452efc66ca582749730b1e` |
 | 刘三虾 | `ou_562d9c89d4ac36f8ef4cd8a589b9d06c` |
 | 小a | `ou_09f4d02c2ff58cf73ae46f7559737a96` |
