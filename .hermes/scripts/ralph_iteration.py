@@ -316,23 +316,37 @@ def run_actor(story, prd, strategy):
             report_section = raw_output[-1500:]
 
         def extract_list(key):
-            pattern = rf"^{key}:\s*\[([^\]]*)\]"
-            m = _re.search(pattern, report_section, _re.MULTILINE)
+            """提取 key: [...] 列表，支持跨行格式"""
+            # 找 key: [ 开始位置（不限行首，允许前面有空格/缩进）
+            start_pattern = rf"(?:^|\n)\s*{key}:\s*\["
+            m = _re.search(start_pattern, report_section, _re.MULTILINE)
             if not m:
-                # 尝试无锚点版本
-                pattern2 = rf"{key}:\s*\[([^\]]*)\]"
-                matches = list(_re.finditer(pattern2, report_section))
-                if matches:
-                    m = matches[-1]
-                else:
-                    return []
-            raw_items = m.group(1).strip() if m else ""
-            if not raw_items:
                 return []
-            return [i.strip() for i in raw_items.split(",") if i.strip()]
+            bracket_start = m.end() - 1  # position of '['
+            # 从 '[' 之后找配对的 ']'
+            depth = 0
+            chars = report_section[bracket_start:]
+            end_pos = -1
+            for i, ch in enumerate(chars):
+                if ch == '[':
+                    depth += 1
+                elif ch == ']':
+                    depth -= 1
+                    if depth == 0:
+                        end_pos = i
+                        break
+            if end_pos < 0:
+                return []
+            raw_items = chars[1:end_pos]  # strip '[' and ']'
+            if not raw_items.strip():
+                return []
+            # 按换行或逗号分割
+            items = _re.split(r'[\n,]', raw_items)
+            return [i.strip().strip('"').strip("'") for i in items if i.strip() and i.strip() not in ('"', "'")]
 
         def extract_field(key, default=None):
-            pattern = rf"^{key}:\s*(true|false|[\w\u4e00-\u9fa5\-]+)"
+            """支持多行的 field 提取，不依赖行首锚点"""
+            pattern = rf"(?:^|\n)\s*{key}:\s*(true|false|[\w\u4e00-\u9fa5\-]+)"
             m = _re.search(pattern, report_section, _re.MULTILINE | _re.IGNORECASE)
             if m:
                 val = m.group(1).lower()
