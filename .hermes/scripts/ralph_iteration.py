@@ -66,7 +66,11 @@ EXECUTIONER_PROMPT = """\
 5. 实现该 story 的全部内容（用工具读代码、写代码、跑命令）
 6. 跑质量检查（lint/test/typecheck 哪个存在就跑哪个）
 7. 确保所有 acceptanceCriteria 都满足后再 commit
-8. commit: `feat: US-{short_id} - {title}`
+8. commit 格式（严格遵守，禁止改变）：
+   ```
+   git commit -m "feat: US-{short_id} - {title}"
+   ```
+   **禁止**写成 `feat: US-US-{short_id}` 或其他变体！
 
 ## 完成报告格式（必须输出）
 
@@ -90,6 +94,22 @@ remaining: [未满足的 criteria]
 - CI/lint/test 任何一个挂了都要修复后再提交
 - learnings 必须有实质内容，记录你在这个 story 中发现的模式、坑、可复用经验（至少 2 条）
 - 不要写"无"或"暂无"
+
+## 关于 turns（max-turns=30）
+
+- 你有 30 轮对话，尽量在 30 轮内完成所有 acceptanceCriteria
+- 如果 30 轮内实在做不完（complex multi-file refactor），在最后一轮末尾输出：
+```
+[PARTIAL]
+story_id: {story_id}
+pass: false
+files: [已完成文件的列表]
+learnings: [已完成的工作记录]
+remaining: [尚未完成的工作]
+```
+然后停止。系统会自动 resume 你的 session 继续执行。
+- 如果 30 轮内完成了，输出 [DONE] 报告然后停止。
+- **禁止**在 30 轮之内提前输出 [DONE] 或 [PARTIAL]（除非真的完成了或确实无法继续）。
 """
 
 
@@ -253,8 +273,11 @@ def run_actor(story, prd, strategy):
 
     if valid_session:
         cmd.extend(["--resume", session_id])
+        # 超时后下次仍要恢复同 session，所以运行前就写入
+        session_file.write_text(session_id)
+        log(f"ACTOR: will resume session {session_id} (persisted before run)")
     else:
-        # 创建新 session（hermes chat -q 首次执行会创建 session）
+        # 新 session：运行后从输出提取，再保存
         session_id = None
 
     # 切换到目标目录执行
@@ -267,7 +290,7 @@ def run_actor(story, prd, strategy):
             cmd,
             capture_output=True,
             text=True,
-            timeout=600,  # 10分钟超时
+            timeout=3600,  # 1小时超时（10分钟太短，复杂 story 会截断）
             cwd=workdir,
             env={**subprocess.os.environ, "HERMES_SESSION_NAME": f"ralph_{story_id}"},
         )
@@ -289,7 +312,7 @@ def run_actor(story, prd, strategy):
         stdout = ""
         stderr = "Timeout after 600s"
         returncode = -1
-        log(f"ACTOR: timeout after 600s")
+        log(f"ACTOR: timeout after 3600s — session preserved for resume")
     except Exception as e:
         stdout = ""
         stderr = str(e)
@@ -363,6 +386,14 @@ def run_actor(story, prd, strategy):
     except Exception as e:
         log(f"ACTOR: parse error {e}")
 
+    # 兜底：如果 learnings 为空但有原始输出，且有有效 session → auto-resume
+    if not learnings and raw_output and session_file.exists():
+        session_id = session_file.read_text().strip()
+        if session_id:
+            log(f"ACTOR: no [DONE]/[PARTIAL] found — triggering auto-resume")
+            return _resume_and_continue(
+                session_file, prompt_file_abs, workdir, target_repo, story, prd, strategy
+            )
     # 兜底：如果 learnings 为空但有原始输出
     if not learnings and raw_output:
         learnings = [f"(sub-agent output {len(raw_output)} chars, parse failed)"]
@@ -375,6 +406,161 @@ def run_actor(story, prd, strategy):
         "passes": passes,
         "remaining": remaining,
         "attempt": story.get("attempt", 0) + 1,
+    }
+
+
+def _resume_and_continue(session_file, prompt_file_abs, workdir, target_repo, story, prd, strategy):
+    """
+    自动 resume 逻辑：当 run_actor 解析不到 [DONE]/[PARTIAL] 时，
+    说明 agent 耗尽了 turns 而未汇报。自动 resume session 继续执行。
+    最多重试 3 次。
+    """
+    import subprocess
+    resume_count = 0
+    max_resume = 3
+    current_files = []
+    current_learnings = []
+
+    while resume_count < max_resume:
+        resume_count += 1
+        session_id = session_file.read_text().strip() if session_file.exists() else None
+        if not session_id:
+            log(f"ACTOR: resume {resume_count}/{max_resume} — no session found, giving up")
+            break
+
+        # 写继续 prompt
+        continue_prompt = f"""\
+继续你之前的任务。你正在实现 story: {story['id']} - {story.get('title', '')}
+
+当前状态：你在上一轮对话中完成了部分工作，但还没有输出 [DONE] 或 [PARTIAL] 报告。
+请继续执行，完成所有 acceptanceCriteria 后输出报告。
+
+## 可用工具
+- **terminal** (Bash): 运行命令
+- **file** (Read/Write/Patch): 读写文件
+
+## 工作目录：{target_repo}
+
+## 继续步骤：
+1. 检查之前的工作进度（git status / git log）
+2. 继续完成剩余的 acceptanceCriteria
+3. 跑质量检查
+4. commit: `git commit -m "feat: US-{story['id'].replace('US-', '')} - {story.get('title', '')}"`
+5. 输出报告：
+```
+[DONE]
+story_id: {story['id']}
+pass: true
+files: [file1, file2, ...]
+learnings: [learn1, learn2, ...]
+```
+
+如果无法完成所有 criteria，输出：
+```
+[PARTIAL]
+story_id: {story['id']}
+pass: false
+files: [file1, file2, ...]
+learnings: [已完成的工作记录]
+remaining: [未完成的工作]
+```
+"""
+        # 写继续 prompt 到文件，让 resume 时 agent 收到明确指令
+        continue_prompt_file = RALPH_DIR / f".actor_continue_{story['id'].replace('-', '_')}.md"
+        continue_prompt_file.write_text(continue_prompt, encoding="utf-8")
+        log(f"ACTOR: wrote continue prompt to {continue_prompt_file.name}")
+
+        prompt_file_abs_resume = str(continue_prompt_file.absolute())
+        cmd = [
+            "hermes", "chat",
+            "-q", f"@{prompt_file_abs_resume}",
+            "-t", "terminal",
+            "--yolo", "--ignore-user-config", "--ignore-rules",
+            "--resume", session_id,
+            "--max-turns", "30",
+        ]
+        log(f"ACTOR: auto-resume {resume_count}/{max_resume} session={session_id[:16]}...")
+
+        try:
+            result = subprocess.run(
+                cmd, capture_output=True, text=True,
+                timeout=3600, cwd=workdir,
+                env={**subprocess.os.environ, "HERMES_SESSION_NAME": f"ralph_{story['id']}"},
+            )
+            stdout = result.stdout
+            log(f"ACTOR: resume {resume_count} got {len(stdout)} chars, exit {result.returncode}")
+
+            # 解析报告
+            import re as _re
+            done_match = _re.search(r"\[DONE\]|\[PARTIAL\]", stdout, _re.IGNORECASE)
+            if done_match:
+                report_section = stdout[done_match.start():]
+
+                def _extract_list(key):
+                    start_pattern = rf"(?:^|\n)\s*{key}:\s*\["
+                    m = _re.search(start_pattern, report_section, _re.MULTILINE)
+                    if not m: return []
+                    bracket_start = m.end() - 1
+                    depth = 0; chars = report_section[bracket_start:]; end_pos = -1
+                    for i, ch in enumerate(chars):
+                        if ch == '[': depth += 1
+                        elif ch == ']':
+                            depth -= 1
+                            if depth == 0: end_pos = i; break
+                    if end_pos < 0: return []
+                    raw_items = chars[1:end_pos]
+                    if not raw_items.strip(): return []
+                    items = _re.split(r'[\n,]', raw_items)
+                    return [i.strip().strip('"').strip("'") for i in items if i.strip() and i.strip() not in ('"', "'")]
+
+                def _extract_field(key, default=None):
+                    pattern = rf"(?:^|\n)\s*{key}:\s*(true|false|[\w\u4e00-\u9fa5\-]+)"
+                    m = _re.search(pattern, report_section, _re.MULTILINE | _re.IGNORECASE)
+                    if m:
+                        val = m.group(1).lower()
+                        if val == "true": return True
+                        elif val == "false": return False
+                        return val
+                    return default
+
+                files_changed = _extract_list("files") or _extract_list("file")
+                learnings = _extract_list("learnings")
+                passes = _extract_field("pass", False)
+                remaining = _extract_list("remaining")
+
+                log(f"ACTOR: resume {resume_count} → pass={passes}, files={files_changed}")
+                return {
+                    "story_id": story['id'],
+                    "files_changed": files_changed,
+                    "learnings": learnings,
+                    "passes": passes,
+                    "remaining": remaining,
+                    "attempt": story.get("attempt", 0) + resume_count,
+                }
+            else:
+                log(f"ACTOR: resume {resume_count} — still no [DONE]/[PARTIAL], trying again")
+                # session 仍有效，继续循环
+                current_learnings.append(f"(resume {resume_count} no report, {len(stdout)} chars)")
+                # 更新 session
+                sid_m = _re.search(r"session_id:\s*(\S+)", stdout)
+                if sid_m:
+                    session_file.write_text(sid_m.group(1))
+
+        except subprocess.TimeoutExpired:
+            log(f"ACTOR: resume {resume_count} timeout — session preserved")
+            current_learnings.append(f"(resume {resume_count} timeout)")
+        except Exception as e:
+            log(f"ACTOR: resume {resume_count} error: {e}")
+            current_learnings.append(f"(resume {resume_count} error: {e})")
+
+    # 所有 resume 都失败
+    return {
+        "story_id": story['id'],
+        "files_changed": [],
+        "learnings": current_learnings or ["(no report after max resumes)"],
+        "passes": False,
+        "remaining": ["(incomplete — sub-agent ran out of turns)"],
+        "attempt": story.get("attempt", 0) + max_resume,
     }
 
 
