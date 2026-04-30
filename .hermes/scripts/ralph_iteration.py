@@ -181,16 +181,63 @@ def archive_run(prd):
     return folder
 
 
-def distill_learnings(learnings):
-    """把 learnings 沉淀到记忆系统"""
+def distill_learnings(learnings, story_id=None):
+    """
+    把 learnings 沉淀到两个地方：
+    1. .memory_janitor_pending.md（dojo.py 处理）
+    2. Obsidian vault（用户可直接在 Obsidian 桌面端查看）
+    """
+    from datetime import datetime as _dt
+    vault_path = Path.home() / "obsidian-vault"
+
+    results = []
+
+    # 1. 写入 dojo janitor 文件
     dojo_path = Path.home() / ".hermes" / "scripts" / "dojo.py"
     if dojo_path.exists():
         janitor_file = Path.home() / ".hermes" / ".memory_janitor_pending.md"
-        entry = f"\n## Ralph Iteration {datetime.now().strftime('%Y-%m-%d')}\n" + "\n".join(f"- {l}" for l in learnings) + "\n"
+        entry = f"\n## Ralph Iteration {_dt.now().strftime('%Y-%m-%d')}\n" + "\n".join(f"- {l}" for l in learnings) + "\n"
         with open(janitor_file, "a") as f:
             f.write(entry)
-        return True
-    return False
+        results.append("dojo")
+
+    # 2. 写入 Obsidian vault
+    if vault_path.exists():
+        date_str = _dt.now().strftime("%Y-%m-%d")
+        # learnings 文件
+        if story_id:
+            filename = f"learnings/{date_str}-{story_id}.md"
+        else:
+            filename = f"learnings/{date_str}.md"
+        vault_file = vault_path / filename
+        content = f"""\
+# Learnings — {date_str} {story_id or ''}
+
+## Learnings
+
+"""
+        for l in learnings:
+            content += f"- {l}\n"
+
+        content += f"""
+
+## Metadata
+
+- **story**: {story_id or 'N/A'}
+- **distilled_at**: {_dt.now().isoformat()}
+- **source**: Ralph Iteration Loop
+
+"""
+        try:
+            vault_file.parent.mkdir(exist_ok=True)
+            vault_file.write_text(content, encoding="utf-8")
+            results.append(f"obsidian:{filename}")
+            log(f"distill: written to Obsidian {filename}")
+        except Exception as e:
+            log(f"distill: Obsidian write failed: {e}")
+            results.append(f"obsidian:FAILED({e})")
+
+    return results
 
 
 def build_actor_prompt(story, prd, strategy="EXPLORE"):
@@ -635,7 +682,7 @@ def main():
         mark_story_done(prd, target["id"], len(story_learnings))
 
     append_progress(target["id"], result.get("files_changed", []), story_learnings, strategy)
-    distill_learnings(story_learnings)
+    distill_learnings(story_learnings, story_id=target["id"])
     record_iteration(result)
 
     # TERMINATOR: 判决
