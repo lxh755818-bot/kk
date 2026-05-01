@@ -41,7 +41,7 @@ DISCOVER_RESP=$(curl -s -X POST "https://evomap.ai/a2a/discover" \
         \"protocol_version\": \"1.0.0\",
         \"message_type\": \"discover\",
         \"sender_id\": \"$NODE_ID\",
-        \"message_id\": \"msg_\$(date +%s)_\$\$\",
+        \"message_id\": \"msg_$(date +%s)_\$\$\",
         \"timestamp\": \"\$(date -u +%Y-%m-%dT%H:%M:%SZ)\",
         \"payload\": {\"max_results\": 5}
     }" 2>/dev/null)
@@ -97,14 +97,45 @@ except:
     print('parse_error')
 " 2>/dev/null || echo "error")
 
-log "Claim response status: $CLAIM_STATUS"
+ALREADY_JOINED=$(echo "$CLAIM_RESP" | python3 -c "
+import sys,json; d=json.load(sys.stdin); print('true' if d.get('already_joined') else 'false')
+" 2>/dev/null)
 
-if echo "$CLAIM_STATUS" | grep -qE "claimed|success|accepted"; then
+log "Claim response status: $CLAIM_STATUS (already_joined=$ALREADY_JOINED)"
+
+# 若 already_joined=true，先查本节点是否已有 pending submission，有则跳过
+if [ "$ALREADY_JOINED" = "true" ]; then
+    log "Task already joined: $FIRST_TASK — checking submission status..."
+    MY_SUBMISSION=$(curl -s "https://evomap.ai/a2a/task/my?node_id=$NODE_ID" \
+        -H "Authorization: Bearer $NODE_SECRET" 2>/dev/null | \
+        python3 -c "
+import sys, json
+try:
+    d = json.load(sys.stdin)
+    for t in d.get('tasks', []):
+        if t.get('task_id') == '$FIRST_TASK':
+            print(t.get('my_submission_status', 'none'))
+            break
+    else:
+        print('none')
+except:
+    print('none')
+" 2>/dev/null)
+    if [ "$MY_SUBMISSION" = "pending" ] || [ "$MY_SUBMISSION" = "accepted" ]; then
+        log "Task $FIRST_TASK already has submission ($MY_SUBMISSION) — skipping validation"
+        rm -f "$PID_FILE"
+        exit 0
+    else
+        log "No active submission found (status: $MY_SUBMISSION), will proceed with validation"
+    fi
+fi
+
+if echo "$CLAIM_STATUS" | grep -qE "claimed|success|accepted" || [ "$ALREADY_JOINED" = "true" ]; then
     log "Task claimed: $FIRST_TASK"
     echo "$CLAIM_RESP" > "$VALIDATION_DIR/claimed_$FIRST_TASK.json"
     
     # ====== Step 3: 获取任务详情并执行验证 ======
-    TASK_DETAIL=$(curl -s "https://evomap.ai/a2a/task/$FIRST_TASK?sender_id=$NODE_ID&message_id=msg_\$(date +%s)" \
+    TASK_DETAIL=$(curl -s "https://evomap.ai/a2a/task/$FIRST_TASK?sender_id=$NODE_ID&message_id=msg_$(date +%s)" \
         -H "Authorization: Bearer $NODE_SECRET" 2>/dev/null)
     
     echo "$TASK_DETAIL" > "$VALIDATION_DIR/task_detail_$FIRST_TASK.json"
