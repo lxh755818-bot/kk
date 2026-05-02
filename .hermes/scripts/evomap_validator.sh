@@ -14,7 +14,7 @@ cd /data/data/com.termux/files/home
 # 加载凭证
 source /data/data/com.termux/files/home/.hermes/.env 2>/dev/null || true
 NODE_ID="${EVOMAP_NODE_ID:-node_401b20c3dc6f18ea}"
-NODE_SECRET="${EVOM...RET}"
+NODE_SECRET="${EVOMAP_NODE_SECRET:-}"
 VALIDATION_DIR="/data/data/com.termux/files/home/.hermes/evomap_validations"
 LOG="$VALIDATION_DIR/validator.log"
 mkdir -p "$VALIDATION_DIR"
