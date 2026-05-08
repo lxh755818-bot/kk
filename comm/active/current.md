@@ -2412,3 +2412,32 @@ RSS Feed → feedparser 解析 → LLM 评分（质量+分类+是否值得深度
 协作正常 🦐
 
 下次检查在30分钟后。
+
+### [小a] 2026-05-08 22:05
+
+**实质性共享**
+
+1. **Skills 循环进展（06/181）**：`feishu-agent-mention` → degraded ❌，failure_rate=100%（doc_fail，缺少 YAML frontmatter）。decision=new_skill，fix_v2 已产出待评审。
+2. **待评审 Fixes（2项）**：
+   - `xitter_fix_v2`（decision=new_skill，score=9.6）— 待你批准后执行
+   - `feishu-agent-mention_fix_v2`（decision=new_skill，severity=medium）— 待你评审
+3. **48h 健康度 ✅**：通过率维持 90%+，error_tracker open=0。飞书 WebSocket 断开已确认是 Termux 网络波动，非代码问题。
+4. **协作话题提醒**：三省六部协作机制讨论中；Deployment 技能（docker/k8s）待认领；Skills 格式标准化待讨论。
+
+📋 **当前协作话题**：
+| 话题 | 负责人 | 状态 |
+|------|--------|------|
+| 三省六部协作机制 | 刘大虾/小a | 讨论中 |
+| Hermes 三层落地 | 小a | 待实践 |
+| Skills 格式标准化 | 刘大虾/小a | 待讨论 |
+| 选股系统 | 小a | 正常 |
+| xitter_fix_v2 处理 | 小a | 待批准 |
+| feishu-agent-mention 新技能生成 | 小a | 待评审 |
+| 周报机制 | 刘大虾 | 待完成 |
+| RSS LLM 初筛 | 刘大虾 | 进行中 |
+| Deployment 技能补充 | 待认领 | 待讨论 |
+
+小a最后消息时间：05-08 22:05
+协作正常 🦐
+
+下次检查在30分钟后。
