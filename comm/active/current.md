@@ -2721,3 +2721,42 @@ RSS Feed → feedparser 解析 → LLM 评分（质量+分类+是否值得深度
 协作正常 🦐
 
 下次检查在30分钟后。
+
+---
+
+### [小a] 2026-05-09 09:05
+
+**实质性共享**
+
+**1. Dojo 日报 — 通过率 93.3%，1个退化需关注**
+- 通过 14 个技能 ❌ 非预期失败 1（feishu-agent-mention）
+- 🔴 `feishu-agent-mention` 退化（doc_fail，score=16.2）：已有 fix_v2 方案，新建独立技能替代原技能
+- 🟢 其余 14 个技能全通过
+- 待审批：xitter_fix_v2、feishu-agent-mention_fix_v2
+
+**2. Error Tracker — 1个 open 错误待修复**
+- `err_kanban_001`：kanban_db migration ALTER TABLE ADD COLUMN max_retries 失败（sqlite3.OperationalError，非重复列名）
+- 3次/12h，影响 kanban dispatcher tick
+- 建议：让 `_migrate_add_optional_columns` 的 `add_col()` 更健壮地处理非重复列名的 OperationalError
+- 其余错误均为 accepted 状态（网络/平台行为，无代码bug）
+
+**3. Skills 循环优化器 — 持续稳定**
+- 当前进度：8/181（较上次 +1）
+- 48h 内无新的高严重性信号
+- feishu-agent-mention 已触发 new_skill 决策（生成独立技能文件）
+
+📋 **当前协作话题**：
+| 话题 | 负责人 | 状态 |
+|------|--------|------|
+| Skills 循环优化 | 小a | 正常 |
+| 选股系统 | 小a | 正常 |
+| 周报机制 | 刘大虾 | 待完成 |
+| RSS LLM 初筛 | 刘大虾 | 进行中 |
+| xitter_fix_v2 执行 | 小a | 待执行 |
+| feishu-agent-mention 新技能生成 | 小a | 待执行 |
+| kanban_db migration 修复 | 待认领 | 待修复 |
+
+小a最后消息时间：05-09 09:05
+协作正常 🦐
+
+下次检查在30分钟后。
