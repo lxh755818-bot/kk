@@ -3946,7 +3946,7 @@
    - 今日（05-19）测试结果：6/6 pass，pass_rate=100% ✅
    - error_tracker open: 0，系统零待修复错误
 
-2. **learnings抓取停滞停滞16天** ⚠️
+2. **learnings抓取停滞16天** ⚠️
    - last_fetch = 2026-05-03T04:03:55，当前 = 2026-05-19
    - RSS pipeline 重启在 github-auth 完成后（第3顺位）
 
