@@ -1,0 +1,989 @@
+{
+  "schema_version": 2,
+  "chunk_idx": 19,
+  "chapter_idx": 0,
+  "react_round": 12,
+  "notes": [
+    {
+      "chunk_id": "chunk_0019",
+      "chapter": "绪论",
+      "topic": "章节内容：# 1.1 状态变量及状态空间表达式",
+      "content": "# 1.1 状态变量及状态空间表达式\n\n# 1.1.1 状态变量\n\n足以完全表征系统运动状态的最小个数的一组变量为状态变量。一个用 $n$ 阶微分方程描述的系统,就有 $n$ 个独立变量,当这 $n$ 个独立变量的时间响应都求得时,系统的运动状态也就被揭示无遗了。因此,可以说该系统的状态变量就是 $n$ 阶系统的 $n$ 个独立变量。\n\n同一个系统,究竟选取哪些变量作为独立变量,这不是唯一的,重要的是这些变量应该是相互独立的,且其个数应等于微分方程的阶数；又由于微分方程的阶数唯一地取决于系统中独立储能元件的个数,因此状态变量的个数就应等于系统独立储能元件的个数。\n\n众所周知, $n$ 阶微分方程式要有唯一确定的解, 必须知道 $n$ 个独立的初始条件。很明显, 这 $n$ 个独立的初始条件就是一组状态变量在初始时刻 ${t}_{0}$ 的值。\n\n综上所述,状态变量是既足以完全确定系统运动状态而个数又是最小的一组变量, 当其在 $t = {t}_{0}$ 时刻的值已知时,则在给定 $t \\geq  {t}_{0}$ 时刻的输入作用下,便能完全确定系统在任何 $t \\geq  {t}_{0}$ 时刻的行为。\n\n# 1.1.2 状态矢量\n\n如果 $n$ 个状态变量用 $x_{1}(t), x_{2}(t), \\dots, x_{n}(t)$ 表示，并把这些状态变量看作是矢量 $\\mathbf{x}(t)$ 的分量，则 $\\mathbf{x}(t)$ 就称为状态矢量，记作：",
+      "summary": "# 1.1 状态变量及状态空间表达式  # 1.1.1 状态变量  足以完全表征系统运动状态的最小个数的一组变量为状态变量。一个用 $n$ 阶微分方程描述的系统,就有 $n$ 个独立变量,当这 $n$ 个独立变量的时间响应都求得时,系统的运动状态也就被揭示无遗了。因此,可以说该系统的状态变量就是 $...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {},
+      "created_at": "2026-05-12T09:13:51.408191",
+      "_full_chunk_text": "# 1.1 状态变量及状态空间表达式\n\n# 1.1.1 状态变量\n\n足以完全表征系统运动状态的最小个数的一组变量为状态变量。一个用 $n$ 阶微分方程描述的系统,就有 $n$ 个独立变量,当这 $n$ 个独立变量的时间响应都求得时,系统的运动状态也就被揭示无遗了。因此,可以说该系统的状态变量就是 $n$ 阶系统的 $n$ 个独立变量。\n\n同一个系统,究竟选取哪些变量作为独立变量,这不是唯一的,重要的是这些变量应该是相互独立的,且其个数应等于微分方程的阶数；又由于微分方程的阶数唯一地取决于系统中独立储能元件的个数,因此状态变量的个数就应等于系统独立储能元件的个数。\n\n众所周知, $n$ 阶微分方程式要有唯一确定的解, 必须知道 $n$ 个独立的初始条件。很明显, 这 $n$ 个独立的初始条件就是一组状态变量在初始时刻 ${t}_{0}$ 的值。\n\n综上所述,状态变量是既足以完全确定系统运动状态而个数又是最小的一组变量, 当其在 $t = {t}_{0}$ 时刻的值已知时,则在给定 $t \\geq  {t}_{0}$ 时刻的输入作用下,便能完全确定系统在任何 $t \\geq  {t}_{0}$ 时刻的行为。\n\n# 1.1.2 状态矢量\n\n如果 $n$ 个状态变量用 $x_{1}(t), x_{2}(t), \\dots, x_{n}(t)$ 表示，并把这些状态变量看作是矢量 $\\mathbf{x}(t)$ 的分量，则 $\\mathbf{x}(t)$ 就称为状态矢量，记作：",
+      "_chunk_first_line": "# 1.1 状态变量及状态空间表达式",
+      "_note_index": 1
+    },
+    {
+      "chunk_id": "chunk_0020",
+      "chapter": "绪论",
+      "topic": "第20chunk内容",
+      "content": "如果 $n$ 个状态变量用 $x_{1}(t), x_{2}(t), \\dots, x_{n}(t)$ 表示，并把这些状态变量看作是矢量 $\\mathbf{x}(t)$ 的分量，则 $\\mathbf{x}(t)$ 就称为状态矢量，记作：\n\n$$\n\\pmb {x} (t) = \\left( \\begin{array}{c} {{x _ {1} (  t)}} \\\\ {{x _ {2} (  t)}} \\\\ {{\\vdots}} \\\\ {{x _ {n} (  t)}} \\end{array} \\right) \\quad \\text {或} \\quad \\pmb {x} ^ {\\mathrm {T}} (t) = [   x _ {1} (  t)  , \\quad x _ {2} (  t)  , \\quad \\dots , \\quad x _ {n} (  t) ]\n$$\n\n# 1.1.3 状态空间\n\n以状态变量 ${x}_{1}\\left( t\\right) ,{x}_{2}\\left( t\\right) ,\\cdots ,{x}_{n}\\left( t\\right)$ 为坐标轴所构成的 $n$ 维空间,称为状态空间。在特定时刻 $t$ ,状态矢量 $\\mathbf{x}\\left( t\\right)$ 在状态空间中是一点。已知初始时刻 ${t}_{0}$ 的状态 $\\mathbf{x}\\left( {t}_{0}\\right)$ ,就得到状态空间中的一个初始点。随着时间的推移, $\\mathbf{x}\\left( t\\right)$ 将在状态空间中描绘出一条轨迹,称为状态轨线。状态矢量的状态空间表示将矢量的代数表示和几何概念联系起来了。\n\n# 1.1.4 状态方程\n\n由系统的状态变量构成的一阶微分方程组称为系统的状态方程。",
+      "summary": "如果 $n$ 个状态变量用 $x_{1}(t), x_{2}(t), \\dots, x_{n}(t)$ 表示，并把这些状态变量看作是矢量 $\\mathbf{x}(t)$ 的分量，则 $\\mathbf{x}(t)$ 就称为状态矢量，记作：  $$ \\pmb {x} (t) = \\left( \\begi...",
+      "tags": [
+        "state-space",
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0019": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:52.811527",
+      "_full_chunk_text": "如果 $n$ 个状态变量用 $x_{1}(t), x_{2}(t), \\dots, x_{n}(t)$ 表示，并把这些状态变量看作是矢量 $\\mathbf{x}(t)$ 的分量，则 $\\mathbf{x}(t)$ 就称为状态矢量，记作：\n\n$$\n\\pmb {x} (t) = \\left( \\begin{array}{c} {{x _ {1} (  t)}} \\\\ {{x _ {2} (  t)}} \\\\ {{\\vdots}} \\\\ {{x _ {n} (  t)}} \\end{array} \\right) \\quad \\text {或} \\quad \\pmb {x} ^ {\\mathrm {T}} (t) = [   x _ {1} (  t)  , \\quad x _ {2} (  t)  , \\quad \\dots , \\quad x _ {n} (  t) ]\n$$\n\n# 1.1.3 状态空间\n\n以状态变量 ${x}_{1}\\left( t\\right) ,{x}_{2}\\left( t\\right) ,\\cdots ,{x}_{n}\\left( t\\right)$ 为坐标轴所构成的 $n$ 维空间,称为状态空间。在特定时刻 $t$ ,状态矢量 $\\mathbf{x}\\left( t\\right)$ 在状态空间中是一点。已知初始时刻 ${t}_{0}$ 的状态 $\\mathbf{x}\\left( {t}_{0}\\right)$ ,就得到状态空间中的一个初始点。随着时间的推移, $\\mathbf{x}\\left( t\\right)$ 将在状态空间中描绘出一条轨迹,称为状态轨线。状态矢量的状态空间表示将矢量的代数表示和几何概念联系起来了。\n\n# 1.1.4 状态方程\n\n由系统的状态变量构成的一阶微分方程组称为系统的状态方程。",
+      "_chunk_first_line": "如果 $n$ 个状态变量用 $x_{1}(t), x_{2}(t), \\dots, x_{n}(t)$ 表示，并把这些状态变量看作是矢量 $\\mathbf{x}(t)$ 的分量，则 $\\mathbf{",
+      "_note_index": 2
+    },
+    {
+      "chunk_id": "chunk_0021",
+      "chapter": "绪论",
+      "topic": "核心概念：状态方程",
+      "content": "由系统的状态变量构成的一阶微分方程组称为系统的状态方程。\n\n用图1.1所示的 $R - L - C$ 网络,说明如何用状态变量描述这一系统。\n\n此系统有两个独立储能元件即电容 $C$ 和电感 $L$ ，所以应有两个状态变量。状态变量的选取，原则上是任意的，但考虑到电容的储能与其两端的电压 $u_{C}$ 和电感的储能与流经它的电流 $i$ 均直接相关，故通常就以 $u_{C}$ 和 $i$ 作为此系统的两个状态变量。\n\n根据电学原理，容易写出两个含有状态变量的一阶微分方程组：\n\n$$\nC \\frac {\\mathrm {d} u _ {C}}{\\mathrm {d} t} = i\n$$\n\n$$\nL \\frac {\\mathrm {d} i}{\\mathrm {d} t} + R i + u _ {c} = u\n$$\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/85b5542d86e88e370a5273d13fe78c60527d06accf79da1da902d80bfd8a1b74.jpg)\n\n图1.1 $R - L - C$ 电路\n\n亦即\n\n$$\n\\begin{array}{l} \\dot {u} _ {C} = \\frac {1}{C} i \\tag {1.1} \\\\ i = - \\frac {1}{L} u _ {c} - \\frac {R}{L} i + \\frac {1}{L} u \\\\ \\end{array}\n$$\n\n式（1.1）就是图1.1系统的状态方程，式中若将状态变量用一般符号 $x_{i}$ 表示，即令 $x_{1} = u_{C}, x_{2} = i$ ；并写成矢量矩阵形式，则状态方程变为：",
+      "summary": "由系统的状态变量构成的一阶微分方程组称为系统的状态方程。  用图1.1所示的 $R - L - C$ 网络,说明如何用状态变量描述这一系统。  此系统有两个独立储能元件即电容 $C$ 和电感 $L$ ，所以应有两个状态变量。状态变量的选取，原则上是任意的，但考虑到电容的储能与其两端的电压 $u_{C...",
+      "tags": [
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0019": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0020": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:53.444903",
+      "_full_chunk_text": "由系统的状态变量构成的一阶微分方程组称为系统的状态方程。\n\n用图1.1所示的 $R - L - C$ 网络,说明如何用状态变量描述这一系统。\n\n此系统有两个独立储能元件即电容 $C$ 和电感 $L$ ，所以应有两个状态变量。状态变量的选取，原则上是任意的，但考虑到电容的储能与其两端的电压 $u_{C}$ 和电感的储能与流经它的电流 $i$ 均直接相关，故通常就以 $u_{C}$ 和 $i$ 作为此系统的两个状态变量。\n\n根据电学原理，容易写出两个含有状态变量的一阶微分方程组：\n\n$$\nC \\frac {\\mathrm {d} u _ {C}}{\\mathrm {d} t} = i\n$$\n\n$$\nL \\frac {\\mathrm {d} i}{\\mathrm {d} t} + R i + u _ {c} = u\n$$\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/85b5542d86e88e370a5273d13fe78c60527d06accf79da1da902d80bfd8a1b74.jpg)\n\n图1.1 $R - L - C$ 电路\n\n亦即\n\n$$\n\\begin{array}{l} \\dot {u} _ {C} = \\frac {1}{C} i \\tag {1.1} \\\\ i = - \\frac {1}{L} u _ {c} - \\frac {R}{L} i + \\frac {1}{L} u \\\\ \\end{array}\n$$\n\n式（1.1）就是图1.1系统的状态方程，式中若将状态变量用一般符号 $x_{i}$ 表示，即令 $x_{1} = u_{C}, x_{2} = i$ ；并写成矢量矩阵形式，则状态方程变为：",
+      "_chunk_first_line": "由系统的状态变量构成的一阶微分方程组称为系统的状态方程。",
+      "_note_index": 3
+    },
+    {
+      "chunk_id": "chunk_0022",
+      "chapter": "绪论",
+      "topic": "核心概念：状态方程",
+      "content": "$$\n\\begin{array}{l} \\dot {u} _ {C} = \\frac {1}{C} i \\tag {1.1} \\\\ i = - \\frac {1}{L} u _ {c} - \\frac {R}{L} i + \\frac {1}{L} u \\\\ \\end{array}\n$$\n\n式（1.1）就是图1.1系统的状态方程，式中若将状态变量用一般符号 $x_{i}$ 表示，即令 $x_{1} = u_{C}, x_{2} = i$ ；并写成矢量矩阵形式，则状态方程变为：\n\n$$\n\\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\end{array} \\right) = \\left( \\begin{array}{c c} 0 & \\frac {1}{C} \\\\ - \\frac {1}{L} & - \\frac {R}{L} \\end{array} \\right) \\binom {x _ {1}} {x _ {2}} + \\binom {0} {\\frac {1}{L}} u \\tag {1.2}\n$$\n\n或\n\n$$\n\\dot {\\boldsymbol {x}} = \\boldsymbol {A} \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u}\n$$\n\n式中",
+      "summary": "$$ \\begin{array}{l} \\dot {u} _ {C} = \\frac {1}{C} i \\tag {1.1} \\\\ i = - \\frac {1}{L} u _ {c} - \\frac {R}{L} i + \\frac {1}{L} u \\\\ \\end{array} $$  式（1....",
+      "tags": [
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0021": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0020": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:54.077669",
+      "_full_chunk_text": "$$\n\\begin{array}{l} \\dot {u} _ {C} = \\frac {1}{C} i \\tag {1.1} \\\\ i = - \\frac {1}{L} u _ {c} - \\frac {R}{L} i + \\frac {1}{L} u \\\\ \\end{array}\n$$\n\n式（1.1）就是图1.1系统的状态方程，式中若将状态变量用一般符号 $x_{i}$ 表示，即令 $x_{1} = u_{C}, x_{2} = i$ ；并写成矢量矩阵形式，则状态方程变为：\n\n$$\n\\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\end{array} \\right) = \\left( \\begin{array}{c c} 0 & \\frac {1}{C} \\\\ - \\frac {1}{L} & - \\frac {R}{L} \\end{array} \\right) \\binom {x _ {1}} {x _ {2}} + \\binom {0} {\\frac {1}{L}} u \\tag {1.2}\n$$\n\n或\n\n$$\n\\dot {\\boldsymbol {x}} = \\boldsymbol {A} \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u}\n$$\n\n式中",
+      "_chunk_first_line": "$$",
+      "_note_index": 4
+    },
+    {
+      "chunk_id": "chunk_0023",
+      "chapter": "绪论",
+      "topic": "第23chunk内容",
+      "content": "式中\n\n$$\n\\dot {\\boldsymbol {x}} = \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\end{array} \\right), \\quad \\boldsymbol {A} = \\left( \\begin{array}{c c} 0 & \\frac {1}{C} \\\\ - \\frac {1}{L} & - \\frac {R}{L} \\end{array} \\right), \\quad \\boldsymbol {b} = \\left( \\begin{array}{l} 0 \\\\ \\frac {1}{L} \\end{array} \\right)\n$$\n\n# 1.1.5 输出方程\n\n在指定系统输出的情况下,该输出与状态变量间的函数关系式,称为系统的输出方程。如在图 1.1 系统中,指定 ${x}_{1} = {u}_{C}$ 作为输出,输出一般用 $y$ 表示,则有：\n\n$$\ny = u _ {c}\n$$\n\n或\n\n$$\ny = x _ {1} \\tag {1.3}\n$$\n\n式（1.3）就是图1.1系统的输出方程，它的矩阵表示式为：\n\n$$\n\\mathbf {y} = \\left( \\begin{array}{l l} 1, & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}}\n$$\n\n或\n\n$$\n\\mathbf {y} = \\mathbf {c x} \\tag {1.4}\n$$\n\n式中\n\n$$\n\\boldsymbol {c} = \\left(1, 0\\right)\n$$\n\n# 1.1.6 状态空间表达式\n\n状态方程和输出方程总合起来,构成对一个系统完整的动态描述称为系统的状态空间表达式。如式(1.1)和式(1.3)所示,而式(1.2)和式(1.4)就是图1.1系统的状态空间表达式。",
+      "summary": "式中  $$ \\dot {\\boldsymbol {x}} = \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\end{array} \\right), \\quad \\boldsymbol {A} = \\left( \\begin{ar...",
+      "tags": [
+        "state-space",
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0020": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 4.1,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0022": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:55.471799",
+      "_full_chunk_text": "式中\n\n$$\n\\dot {\\boldsymbol {x}} = \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\end{array} \\right), \\quad \\boldsymbol {A} = \\left( \\begin{array}{c c} 0 & \\frac {1}{C} \\\\ - \\frac {1}{L} & - \\frac {R}{L} \\end{array} \\right), \\quad \\boldsymbol {b} = \\left( \\begin{array}{l} 0 \\\\ \\frac {1}{L} \\end{array} \\right)\n$$\n\n# 1.1.5 输出方程\n\n在指定系统输出的情况下,该输出与状态变量间的函数关系式,称为系统的输出方程。如在图 1.1 系统中,指定 ${x}_{1} = {u}_{C}$ 作为输出,输出一般用 $y$ 表示,则有：\n\n$$\ny = u _ {c}\n$$\n\n或\n\n$$\ny = x _ {1} \\tag {1.3}\n$$\n\n式（1.3）就是图1.1系统的输出方程，它的矩阵表示式为：\n\n$$\n\\mathbf {y} = \\left( \\begin{array}{l l} 1, & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}}\n$$\n\n或\n\n$$\n\\mathbf {y} = \\mathbf {c x} \\tag {1.4}\n$$\n\n式中\n\n$$\n\\boldsymbol {c} = \\left(1, 0\\right)\n$$\n\n# 1.1.6 状态空间表达式\n\n状态方程和输出方程总合起来,构成对一个系统完整的动态描述称为系统的状态空间表达式。如式(1.1)和式(1.3)所示,而式(1.2)和式(1.4)就是图1.1系统的状态空间表达式。",
+      "_chunk_first_line": "式中",
+      "_note_index": 5
+    },
+    {
+      "chunk_id": "chunk_0024",
+      "chapter": "绪论",
+      "topic": "核心概念：状态空间, 状态方程",
+      "content": "$$\n\\boldsymbol {c} = \\left(1, 0\\right)\n$$\n\n# 1.1.6 状态空间表达式\n\n状态方程和输出方程总合起来,构成对一个系统完整的动态描述称为系统的状态空间表达式。如式(1.1)和式(1.3)所示,而式(1.2)和式(1.4)就是图1.1系统的状态空间表达式。\n\n在经典控制理论中，用指定某个输出量的高阶微分方程来描述系统的动态过程。如图1.1所示的系统，在以 $u_{C}$ 作输出时，从式（1.1）消去中间变量 $i$ ，得到二阶微分方\n\n程为：\n\n$$\n\\ddot {u} _ {c} + \\frac {R}{L} \\dot {u} _ {c} + \\frac {1}{L C} u _ {c} = \\frac {1}{L C} u \\tag {1.5}\n$$\n\n其相应的传递函数为：\n\n$$\n\\frac {u _ {C} (s)}{u (s)} = \\frac {\\frac {1}{L C}}{s ^ {2} + \\frac {R}{L} s + \\frac {1}{L C}} \\tag {1.6}\n$$\n\n如果要从高阶微分方程或从传递函数变换为状态方程,即分解为多个一阶微分方程, 那么此时的状态方程可以有无穷多种形式,这是由于状态变量的选取可以有无穷多种的缘故。这种状态变量的非唯一性,归根到底,是由于系统结构的不确定性造成的。关于这个问题,下面还将论及,此处暂不多述。\n\n回到式（1.5）或式（1.6）的二阶系统，若改选 $u_{C}$ 和 $\\dot{u}_c$ 作为两个状态变量，即令 $x_{1} = u_{C}$ ， $x_{2} = \\dot{u}_{C}$ ，则得一阶微分方程组为：",
+      "summary": "$$ \\boldsymbol {c} = \\left(1, 0\\right) $$  # 1.1.6 状态空间表达式  状态方程和输出方程总合起来,构成对一个系统完整的动态描述称为系统的状态空间表达式。如式(1.1)和式(1.3)所示,而式(1.2)和式(1.4)就是图1.1系统的状态空间表达式。 ...",
+      "tags": [
+        "state-space",
+        "state-equation",
+        "transfer-function"
+      ],
+      "concept_links": {
+        "chunk_0023": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 4.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0020": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 3.8,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:57.023988",
+      "_full_chunk_text": "$$\n\\boldsymbol {c} = \\left(1, 0\\right)\n$$\n\n# 1.1.6 状态空间表达式\n\n状态方程和输出方程总合起来,构成对一个系统完整的动态描述称为系统的状态空间表达式。如式(1.1)和式(1.3)所示,而式(1.2)和式(1.4)就是图1.1系统的状态空间表达式。\n\n在经典控制理论中，用指定某个输出量的高阶微分方程来描述系统的动态过程。如图1.1所示的系统，在以 $u_{C}$ 作输出时，从式（1.1）消去中间变量 $i$ ，得到二阶微分方\n\n程为：\n\n$$\n\\ddot {u} _ {c} + \\frac {R}{L} \\dot {u} _ {c} + \\frac {1}{L C} u _ {c} = \\frac {1}{L C} u \\tag {1.5}\n$$\n\n其相应的传递函数为：\n\n$$\n\\frac {u _ {C} (s)}{u (s)} = \\frac {\\frac {1}{L C}}{s ^ {2} + \\frac {R}{L} s + \\frac {1}{L C}} \\tag {1.6}\n$$\n\n如果要从高阶微分方程或从传递函数变换为状态方程,即分解为多个一阶微分方程, 那么此时的状态方程可以有无穷多种形式,这是由于状态变量的选取可以有无穷多种的缘故。这种状态变量的非唯一性,归根到底,是由于系统结构的不确定性造成的。关于这个问题,下面还将论及,此处暂不多述。\n\n回到式（1.5）或式（1.6）的二阶系统，若改选 $u_{C}$ 和 $\\dot{u}_c$ 作为两个状态变量，即令 $x_{1} = u_{C}$ ， $x_{2} = \\dot{u}_{C}$ ，则得一阶微分方程组为：",
+      "_chunk_first_line": "$$",
+      "_note_index": 6
+    },
+    {
+      "chunk_id": "chunk_0025",
+      "chapter": "绪论",
+      "topic": "核心概念：状态方程",
+      "content": "如果要从高阶微分方程或从传递函数变换为状态方程,即分解为多个一阶微分方程, 那么此时的状态方程可以有无穷多种形式,这是由于状态变量的选取可以有无穷多种的缘故。这种状态变量的非唯一性,归根到底,是由于系统结构的不确定性造成的。关于这个问题,下面还将论及,此处暂不多述。\n\n回到式（1.5）或式（1.6）的二阶系统，若改选 $u_{C}$ 和 $\\dot{u}_c$ 作为两个状态变量，即令 $x_{1} = u_{C}$ ， $x_{2} = \\dot{u}_{C}$ ，则得一阶微分方程组为：\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = x _ {2} \\\\ \\dot {x} _ {2} = - \\frac {1}{L C} x _ {1} + \\frac {R}{L} x _ {2} + \\frac {1}{L C} u \\tag {1.7} \\\\ \\end{array}\n$$\n\n即\n\n$$\n\\dot {\\boldsymbol {x}} = \\left( \\begin{array}{c c} 0 & 1 \\\\ - \\frac {1}{L C} & - \\frac {R}{L C} \\end{array} \\right) \\boldsymbol {x} + \\left( \\begin{array}{c} 0 \\\\ \\frac {1}{L C} \\end{array} \\right) u \\tag {1.8}\n$$\n\n比较式（1.8）和式（1.2），显而易见，同一系统中，状态变量选取的不同，状态方程也不同。\n\n从理论上说，并不要求状态变量在物理上一定是可以测量的量，但在工程实践上，仍以选取那些容易测量的量作为状态变量为宜，因为在最优控制中，往往需要将状态变量作为反馈量。",
+      "summary": "如果要从高阶微分方程或从传递函数变换为状态方程,即分解为多个一阶微分方程, 那么此时的状态方程可以有无穷多种形式,这是由于状态变量的选取可以有无穷多种的缘故。这种状态变量的非唯一性,归根到底,是由于系统结构的不确定性造成的。关于这个问题,下面还将论及,此处暂不多述。  回到式（1.5）或式（1.6）...",
+      "tags": [
+        "optimal-control",
+        "state-equation",
+        "transfer-function",
+        "feedback"
+      ],
+      "concept_links": {
+        "chunk_0024": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "transfer-function"
+          ],
+          "retrieval_score": 4.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0023": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:57.659412",
+      "_full_chunk_text": "如果要从高阶微分方程或从传递函数变换为状态方程,即分解为多个一阶微分方程, 那么此时的状态方程可以有无穷多种形式,这是由于状态变量的选取可以有无穷多种的缘故。这种状态变量的非唯一性,归根到底,是由于系统结构的不确定性造成的。关于这个问题,下面还将论及,此处暂不多述。\n\n回到式（1.5）或式（1.6）的二阶系统，若改选 $u_{C}$ 和 $\\dot{u}_c$ 作为两个状态变量，即令 $x_{1} = u_{C}$ ， $x_{2} = \\dot{u}_{C}$ ，则得一阶微分方程组为：\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = x _ {2} \\\\ \\dot {x} _ {2} = - \\frac {1}{L C} x _ {1} + \\frac {R}{L} x _ {2} + \\frac {1}{L C} u \\tag {1.7} \\\\ \\end{array}\n$$\n\n即\n\n$$\n\\dot {\\boldsymbol {x}} = \\left( \\begin{array}{c c} 0 & 1 \\\\ - \\frac {1}{L C} & - \\frac {R}{L C} \\end{array} \\right) \\boldsymbol {x} + \\left( \\begin{array}{c} 0 \\\\ \\frac {1}{L C} \\end{array} \\right) u \\tag {1.8}\n$$\n\n比较式（1.8）和式（1.2），显而易见，同一系统中，状态变量选取的不同，状态方程也不同。\n\n从理论上说，并不要求状态变量在物理上一定是可以测量的量，但在工程实践上，仍以选取那些容易测量的量作为状态变量为宜，因为在最优控制中，往往需要将状态变量作为反馈量。",
+      "_chunk_first_line": "如果要从高阶微分方程或从传递函数变换为状态方程,即分解为多个一阶微分方程, 那么此时的状态方程可以有无穷多种形式,这是由于状态变量的选取可以有无穷多种的缘故。这种状态变量的非唯一性,归根到底,是由于系",
+      "_note_index": 7
+    },
+    {
+      "chunk_id": "chunk_0026",
+      "chapter": "绪论",
+      "topic": "核心概念：最优控制, 状态方程",
+      "content": "从理论上说，并不要求状态变量在物理上一定是可以测量的量，但在工程实践上，仍以选取那些容易测量的量作为状态变量为宜，因为在最优控制中，往往需要将状态变量作为反馈量。\n\n设单输入一单输出定常系统，其状态变量为 $x_{1}, x_{2}, \\dots, x_{n}$ ，则状态方程的一般形式为：\n\n$$\n\\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + \\dots + a _ {1 n} x _ {n} + b _ {1} u\n$$\n\n$$\n\\dot {x} _ {2} = a _ {2 1} x _ {1} + a _ {2 2} x _ {2} + \\dots + a _ {2 n} x _ {n} + b _ {2} u\n$$\n\n中\n\n$$\n\\dot {x} _ {n} = a _ {n 1} x _ {1} + a _ {n 2} x _ {2} + \\dots + a _ {n n} x _ {n} + b _ {n} u\n$$\n\n输出方程式则有如下形式：\n\n$$\ny = c _ {1} x _ {1} + c _ {2} x _ {2} + \\dots + c _ {n} x _ {n}\n$$\n\n用矢量矩阵表示时的状态空间表达式则为：\n\n$$\n\\begin{array}{r l} \\dot {\\boldsymbol {x}} & = A \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u} \\\\ \\boldsymbol {y} & = c \\boldsymbol {x} \\end{array} \\tag {1.9}\n$$",
+      "summary": "从理论上说，并不要求状态变量在物理上一定是可以测量的量，但在工程实践上，仍以选取那些容易测量的量作为状态变量为宜，因为在最优控制中，往往需要将状态变量作为反馈量。  设单输入一单输出定常系统，其状态变量为 $x_{1}, x_{2}, \\dots, x_{n}$ ，则状态方程的一般形式为：  $$ ...",
+      "tags": [
+        "state-space",
+        "optimal-control",
+        "state-equation",
+        "feedback"
+      ],
+      "concept_links": {
+        "chunk_0025": {
+          "type": "tag:feedback",
+          "shared_tags": [
+            "feedback",
+            "optimal-control",
+            "state-equation"
+          ],
+          "retrieval_score": 5.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0024": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 4.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:59.210154",
+      "_full_chunk_text": "从理论上说，并不要求状态变量在物理上一定是可以测量的量，但在工程实践上，仍以选取那些容易测量的量作为状态变量为宜，因为在最优控制中，往往需要将状态变量作为反馈量。\n\n设单输入一单输出定常系统，其状态变量为 $x_{1}, x_{2}, \\dots, x_{n}$ ，则状态方程的一般形式为：\n\n$$\n\\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + \\dots + a _ {1 n} x _ {n} + b _ {1} u\n$$\n\n$$\n\\dot {x} _ {2} = a _ {2 1} x _ {1} + a _ {2 2} x _ {2} + \\dots + a _ {2 n} x _ {n} + b _ {2} u\n$$\n\n中\n\n$$\n\\dot {x} _ {n} = a _ {n 1} x _ {1} + a _ {n 2} x _ {2} + \\dots + a _ {n n} x _ {n} + b _ {n} u\n$$\n\n输出方程式则有如下形式：\n\n$$\ny = c _ {1} x _ {1} + c _ {2} x _ {2} + \\dots + c _ {n} x _ {n}\n$$\n\n用矢量矩阵表示时的状态空间表达式则为：\n\n$$\n\\begin{array}{r l} \\dot {\\boldsymbol {x}} & = A \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u} \\\\ \\boldsymbol {y} & = c \\boldsymbol {x} \\end{array} \\tag {1.9}\n$$",
+      "_chunk_first_line": "从理论上说，并不要求状态变量在物理上一定是可以测量的量，但在工程实践上，仍以选取那些容易测量的量作为状态变量为宜，因为在最优控制中，往往需要将状态变量作为反馈量。",
+      "_note_index": 8
+    },
+    {
+      "chunk_id": "chunk_0027",
+      "chapter": "绪论",
+      "topic": "核心概念：状态空间",
+      "content": "用矢量矩阵表示时的状态空间表达式则为：\n\n$$\n\\begin{array}{r l} \\dot {\\boldsymbol {x}} & = A \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u} \\\\ \\boldsymbol {y} & = c \\boldsymbol {x} \\end{array} \\tag {1.9}\n$$\n\n式中， $x = \\left( \\begin{array}{c}x_{1}\\\\ x_{2}\\\\ \\vdots \\\\ x_{n} \\end{array} \\right)$ 为 $n$ 维状态矢量；\n\n$A = \\left( \\begin{matrix} {a}_{11} & {a}_{12} & \\cdots & {a}_{1n} \\\\  {a}_{21} & {a}_{22} & \\cdots & {a}_{2n} \\\\  \\vdots & \\vdots & & \\vdots \\\\  {a}_{n1} & {a}_{n2} & \\cdots & {a}_{nn} \\end{matrix}\\right)$ 为系统内部状态的联系,称为系统矩阵,为 $n \\times  n$ 方阵；\n\n$\\mathbf{b} = \\left( \\begin{matrix} {b}_{1} \\\\  {b}_{2} \\\\   \\\\  \\vdots \\\\  {b}_{n} \\end{matrix}\\right)$ 为输入对状态的作用,称为输入矩阵或控制矩阵,这里为 $n \\times  1$ 的列阵；\n\n$c = \\left( {{c}_{1},{c}_{2},\\cdots ,{c}_{n}}\\right)$ 为输出矩阵,这里为 $1 \\times  n$ 的行阵。\n\n对于一个复杂系统,具有 $r$ 个输入, $m$ 个输出,此时状态方程变为:",
+      "summary": "用矢量矩阵表示时的状态空间表达式则为：  $$ \\begin{array}{r l} \\dot {\\boldsymbol {x}} & = A \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u} \\\\ \\boldsymbol {y} & = c \\bo...",
+      "tags": [
+        "state-space",
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0026": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 4.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0024": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 4.1,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:13:59.845841",
+      "_full_chunk_text": "用矢量矩阵表示时的状态空间表达式则为：\n\n$$\n\\begin{array}{r l} \\dot {\\boldsymbol {x}} & = A \\boldsymbol {x} + \\boldsymbol {b} \\boldsymbol {u} \\\\ \\boldsymbol {y} & = c \\boldsymbol {x} \\end{array} \\tag {1.9}\n$$\n\n式中， $x = \\left( \\begin{array}{c}x_{1}\\\\ x_{2}\\\\ \\vdots \\\\ x_{n} \\end{array} \\right)$ 为 $n$ 维状态矢量；\n\n$A = \\left( \\begin{matrix} {a}_{11} & {a}_{12} & \\cdots & {a}_{1n} \\\\  {a}_{21} & {a}_{22} & \\cdots & {a}_{2n} \\\\  \\vdots & \\vdots & & \\vdots \\\\  {a}_{n1} & {a}_{n2} & \\cdots & {a}_{nn} \\end{matrix}\\right)$ 为系统内部状态的联系,称为系统矩阵,为 $n \\times  n$ 方阵；\n\n$\\mathbf{b} = \\left( \\begin{matrix} {b}_{1} \\\\  {b}_{2} \\\\   \\\\  \\vdots \\\\  {b}_{n} \\end{matrix}\\right)$ 为输入对状态的作用,称为输入矩阵或控制矩阵,这里为 $n \\times  1$ 的列阵；\n\n$c = \\left( {{c}_{1},{c}_{2},\\cdots ,{c}_{n}}\\right)$ 为输出矩阵,这里为 $1 \\times  n$ 的行阵。\n\n对于一个复杂系统,具有 $r$ 个输入, $m$ 个输出,此时状态方程变为:",
+      "_chunk_first_line": "用矢量矩阵表示时的状态空间表达式则为：",
+      "_note_index": 9
+    },
+    {
+      "chunk_id": "chunk_0028",
+      "chapter": "绪论",
+      "topic": "核心概念：状态方程",
+      "content": "对于一个复杂系统,具有 $r$ 个输入, $m$ 个输出,此时状态方程变为:\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + \\dots + a _ {1 n} x _ {n} + b _ {1 1} u _ {1} + b _ {1 2} u _ {2} + \\dots + b _ {1 r} u _ {r} \\\\ \\dot {x} _ {2} = a _ {2 1} x _ {1} + a _ {2 2} x _ {2} + \\dots + a _ {2 n} x _ {n} + b _ {2 1} u _ {1} + b _ {2 2} u _ {2} + \\dots + b _ {2 r} u _ {r} \\\\ \\vdots \\\\ \\dot {x} _ {n} = a _ {n 1} x _ {1} + a _ {n 2} x _ {2} + \\dots + a _ {n n} x _ {n} + b _ {n 1} u _ {1} + b _ {n 2} u _ {2} + \\dots + b _ {n r} u _ {r} \\\\ \\end{array}\n$$\n\n至于输出方程，不仅是状态变量的组合，而且在特殊情况下，还可能有输入矢量的直接传递，因而有如下的一般形式：",
+      "summary": "对于一个复杂系统,具有 $r$ 个输入, $m$ 个输出,此时状态方程变为:  $$ \\begin{array}{l} \\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + \\dots + a _ {1 n} x _ {n} + b _ {...",
+      "tags": [
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0027": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0026": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:14:00.482894",
+      "_full_chunk_text": "对于一个复杂系统,具有 $r$ 个输入, $m$ 个输出,此时状态方程变为:\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + \\dots + a _ {1 n} x _ {n} + b _ {1 1} u _ {1} + b _ {1 2} u _ {2} + \\dots + b _ {1 r} u _ {r} \\\\ \\dot {x} _ {2} = a _ {2 1} x _ {1} + a _ {2 2} x _ {2} + \\dots + a _ {2 n} x _ {n} + b _ {2 1} u _ {1} + b _ {2 2} u _ {2} + \\dots + b _ {2 r} u _ {r} \\\\ \\vdots \\\\ \\dot {x} _ {n} = a _ {n 1} x _ {1} + a _ {n 2} x _ {2} + \\dots + a _ {n n} x _ {n} + b _ {n 1} u _ {1} + b _ {n 2} u _ {2} + \\dots + b _ {n r} u _ {r} \\\\ \\end{array}\n$$\n\n至于输出方程，不仅是状态变量的组合，而且在特殊情况下，还可能有输入矢量的直接传递，因而有如下的一般形式：",
+      "_chunk_first_line": "对于一个复杂系统,具有 $r$ 个输入, $m$ 个输出,此时状态方程变为:",
+      "_note_index": 10
+    },
+    {
+      "chunk_id": "chunk_0029",
+      "chapter": "绪论",
+      "topic": "第30chunk内容",
+      "content": "至于输出方程，不仅是状态变量的组合，而且在特殊情况下，还可能有输入矢量的直接传递，因而有如下的一般形式：\n\n$$\n\\begin{array}{l} y _ {1} = c _ {1 1} x _ {1} + c _ {1 2} x _ {2} + \\dots + c _ {1 n} x _ {n} + d _ {1 1} u _ {1} + d _ {1 2} u _ {2} + \\dots + d _ {1 r} u, \\\\ y _ {2} = c _ {2 1} x _ {1} + c _ {2 2} x _ {2} + \\dots + c _ {2 n} x _ {n} + d _ {2 1} u _ {1} + d _ {2 2} u _ {2} + \\dots + d _ {2 r} u _ {r}. \\\\ \\begin{array}{c} \\bullet \\\\ \\bullet \\\\ \\bullet \\end{array} \\\\ y _ {m} = c _ {m 1} x _ {1} + c _ {m 2} x _ {2} + \\dots + c _ {m n} x _ {n} + d _ {m 1} u _ {1} + d _ {m 2} u _ {2} + \\dots + d _ {m r} u _ {r} \\\\ \\end{array}\n$$\n\n因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：",
+      "summary": "至于输出方程，不仅是状态变量的组合，而且在特殊情况下，还可能有输入矢量的直接传递，因而有如下的一般形式：\n\n$$\n\\begin{array}{l} y _ {1} = c _ {1 1} x _ {1} + c _ {1 2} x _ {2} + \\dots + c _ {1 n} x _ {n} + d _ {1 1} u _ {1} + d _ {1 2} u _ {2} + \\dots + ...",
+      "tags": [
+        "bullet",
+        "array",
+        "begin",
+        "dots"
+      ],
+      "concept_links": {
+        "chunk_0028": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0027": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T09:47:56.802338",
+      "_full_chunk_text": "至于输出方程，不仅是状态变量的组合，而且在特殊情况下，还可能有输入矢量的直接传递，因而有如下的一般形式：\n\n$$\n\\begin{array}{l} y _ {1} = c _ {1 1} x _ {1} + c _ {1 2} x _ {2} + \\dots + c _ {1 n} x _ {n} + d _ {1 1} u _ {1} + d _ {1 2} u _ {2} + \\dots + d _ {1 r} u, \\\\ y _ {2} = c _ {2 1} x _ {1} + c _ {2 2} x _ {2} + \\dots + c _ {2 n} x _ {n} + d _ {2 1} u _ {1} + d _ {2 2} u _ {2} + \\dots + d _ {2 r} u _ {r}. \\\\ \\begin{array}{c} \\bullet \\\\ \\bullet \\\\ \\bullet \\end{array} \\\\ y _ {m} = c _ {m 1} x _ {1} + c _ {m 2} x _ {2} + \\dots + c _ {m n} x _ {n} + d _ {m 1} u _ {1} + d _ {m 2} u _ {2} + \\dots + d _ {m r} u _ {r} \\\\ \\end{array}\n$$\n\n因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：",
+      "_chunk_first_line": "至于输出方程，不仅是状态变量的组合，而且在特殊情况下，还可能有输入矢量的直接传递，因而有如下的一般形式：",
+      "_note_index": 11
+    },
+    {
+      "chunk_id": "chunk_0030",
+      "chapter": "绪论",
+      "topic": "chunk内容: 因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：",
+      "content": "因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：\n\n$$\n\\begin{array}{l} \\dot {\\boldsymbol {x}} = \\boldsymbol {A} \\boldsymbol {x} + \\boldsymbol {B} \\boldsymbol {u} \\tag {1.10} \\\\ \\boldsymbol {y} = \\boldsymbol {C x} + \\boldsymbol {D u} \\\\ \\end{array}\n$$\n\n式中， $x$ 和 $A$ 为同单输入系统，分别为 $n$ 维状态矢量和 $n \\times n$ 系统矩阵；\n\n$\\pmb{u} = \\begin{pmatrix} u_1 \\\\ u_2 \\\\ \\vdots \\\\ u_r \\end{pmatrix}$ 为 $r$ 维输入（或控制）矢量；\n\n$y = \\left( \\begin{array}{c} y_{1} \\\\ y_{2} \\\\ \\vdots \\\\ y_{m} \\end{array} \\right)$ 为 $m$ 维输出矢量；\n\n$\\pmb{B} = \\left( \\begin{a",
+      "summary": "[chunk_0030] 因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：  $$ \\begin{array}{l} \\dot {\\boldsymbol {x}} = \\bolds; [chunk_0031] $\\pmb{B} = \\left( \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1r}\\\\ b_{21} &",
+      "tags": [
+        "general"
+      ],
+      "concept_links": {
+        "chunk_0029": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0028": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T10:10:59.850431",
+      "_full_chunk_text": "因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：\n\n$$\n\\begin{array}{l} \\dot {\\boldsymbol {x}} = \\boldsymbol {A} \\boldsymbol {x} + \\boldsymbol {B} \\boldsymbol {u} \\tag {1.10} \\\\ \\boldsymbol {y} = \\boldsymbol {C x} + \\boldsymbol {D u} \\\\ \\end{array}\n$$\n\n式中， $x$ 和 $A$ 为同单输入系统，分别为 $n$ 维状态矢量和 $n \\times n$ 系统矩阵；\n\n$\\pmb{u} = \\begin{pmatrix} u_1 \\\\ u_2 \\\\ \\vdots \\\\ u_r \\end{pmatrix}$ 为 $r$ 维输入（或控制）矢量；\n\n$y = \\left( \\begin{array}{c} y_{1} \\\\ y_{2} \\\\ \\vdots \\\\ y_{m} \\end{array} \\right)$ 为 $m$ 维输出矢量；\n\n$\\pmb{B} = \\left( \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1r}\\\\ b_{21} & b_{22} & \\dots & b_{2r}\\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{n1} & b_{n2} & \\dots & b_{nr} \\end{array} \\right)$ 为 $n\\times r$ 输入（或控制）矩阵；",
+      "_chunk_first_line": "因而多输入一多输出系统状态空间表达式的矢量矩阵形式为：",
+      "_note_index": 12
+    },
+    {
+      "chunk_id": "chunk_0031",
+      "chapter": "绪论",
+      "topic": "核心概念：状态空间表达式",
+      "content": "$\\pmb{B} = \\left( \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1r}\\\\ b_{21} & b_{22} & \\dots & b_{2r}\\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{n1} & b_{n2} & \\dots & b_{nr} \\end{array} \\right)$ 为 $n\\times r$ 输入（或控制）矩阵；\n\n$C = \\left( \\begin{array}{cccc}c_{11} & c_{12} & \\dots & c_{1n}\\\\ c_{21} & c_{22} & \\dots & c_{2n}\\\\ \\vdots & \\vdots & & \\vdots \\\\ c_{m1} & c_{m2} & \\dots & c_{mn} \\end{array} \\right)$ 为 $m\\times n$ 输出矩阵；\n\n$D = \\left( \\begin{array}{cccc}d_{11} & d_{12} & \\dots & d_{1r}\\\\ d_{21} & d_{22} & \\dots & d_{2r}\\\\ \\vdots & \\vdots & & \\vdots \\\\ d_{m1} & d_{m2} & \\dots & d_{mr} \\end{array} \\right)$ 为 $m\\times r$ 直接传递矩阵。\n\n为了简便，下面除特别申明，在输出方程中，均不考虑输入矢量的直接传递，即令 $D = 0$ 。\n\n# 1.1.7 状态空间表达式的系统框图\n\n和经典控制理论相类似，可以用框图表示系统信号传递的关系。对于式（1.9）和式（1.10）所描述的系统，它们的框图分别如图1.2a和1.2b所示。",
+      "summary": "$\\pmb{B} = \\left( \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1r}\\\\ b_{21} & b_{22} & \\dots & b_{2r}\\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{n1} & b_{n2} & \\dots & b_{nr} \\end{array} \\right)$ 为 $n\\times r$ 输入（或控制）矩阵；\n\n$C = \\left( \\begin{array}{cccc}c_{11} & c_{12} & \\dots & c_{1n}\\\\ c_{21} & c_{22} &",
+      "tags": [
+        "state-space",
+        "block-diagram"
+      ],
+      "concept_links": {
+        "chunk_0027": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 2.8,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0030": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T12:04:35.307334",
+      "_full_chunk_text": "$\\pmb{B} = \\left( \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1r}\\\\ b_{21} & b_{22} & \\dots & b_{2r}\\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{n1} & b_{n2} & \\dots & b_{nr} \\end{array} \\right)$ 为 $n\\times r$ 输入（或控制）矩阵；\n\n$C = \\left( \\begin{array}{cccc}c_{11} & c_{12} & \\dots & c_{1n}\\\\ c_{21} & c_{22} & \\dots & c_{2n}\\\\ \\vdots & \\vdots & & \\vdots \\\\ c_{m1} & c_{m2} & \\dots & c_{mn} \\end{array} \\right)$ 为 $m\\times n$ 输出矩阵；\n\n$D = \\left( \\begin{array}{cccc}d_{11} & d_{12} & \\dots & d_{1r}\\\\ d_{21} & d_{22} & \\dots & d_{2r}\\\\ \\vdots & \\vdots & & \\vdots \\\\ d_{m1} & d_{m2} & \\dots & d_{mr} \\end{array} \\right)$ 为 $m\\times r$ 直接传递矩阵。\n\n为了简便，下面除特别申明，在输出方程中，均不考虑输入矢量的直接传递，即令 $D = 0$ 。\n\n# 1.1.7 状态空间表达式的系统框图\n\n和经典控制理论相类似，可以用框图表示系统信号传递的关系。对于式（1.9）和式（1.10）所描述的系统，它们的框图分别如图1.2a和1.2b所示。",
+      "_chunk_first_line": "$\\pmb{B} = \\left( \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1r}\\\\ b_{21} & b_{22} & \\dots & b_",
+      "_note_index": 13
+    },
+    {
+      "chunk_id": "chunk_0032",
+      "chapter": "绪论",
+      "topic": "核心概念：系统框图与模拟结构图",
+      "content": "和经典控制理论相类似，可以用框图表示系统信号传递的关系。对于式（1.9）和式（1.10）所描述的系统，它们的框图分别如图1.2a和1.2b所示。\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/4066d07e905e7ac06d77d403e4e382887c0ffda5fd9ff8264b63385bebb9b4c3.jpg)\n\n图1.2 系统信号传递框图\n\n图中用单线箭头表示标量信号,用双线箭头表示矢量信号。\n\n从状态空间表达式和系统框图都能清楚地说明：它们既表征了输入对于系统内部状态的因果关系，又反映了内部状态对于外部输出的影响，所以状态空间表达式是对系统的一种完全的描述。\n\n# 1.2 状态变量及状态空间表达式的模拟结构图\n\n在状态空间分析中，采用模拟结构图来反映系统各状态变量之间的信息传递关系，对建立系统的状态空间表达式很有帮助。\n\n为了简便,这里用框图代替模拟计算机的详细模拟图。状态空间表达式的框图可按如下步骤绘制：积分器的数目应等于状态变量数,将它们画在适当的位置,每个积分器的输出表示相应的某个状态变量,然后根据所给的状态方程和输出方程,画出相应的加法器和比例器,最后用箭头将这些元件连接起来。\n\n对于一阶标量微分方程：\n\n$$\n\\dot {x} = a x + b u\n$$\n\n它的模拟结构图示于图1.3。\n\n再以三阶微分方程为例：\n\n$$\n\\ddot {x} + a _ {2} \\ddot {x} + a _ {1} \\dot {x} + a _ {0} x = b u\n$$\n\n将最高阶导数留在等式左边，上式可改写成",
+      "summary": "[chunk_0032] 和经典控制理论相类似，可以用框图表示系统信号传递的关系。对于式（1.9）和式（1.10）所描述的系统，它们的框图分别如图1.2a和1.2b所示。  ![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-",
+      "tags": [
+        "block-diagram",
+        "simulation-structure",
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0031": {
+          "type": "tag:block-diagram",
+          "shared_tags": [
+            "block-diagram",
+            "state-space"
+          ],
+          "retrieval_score": 4.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0027": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 2.5,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T12:04:35.307360",
+      "_full_chunk_text": "和经典控制理论相类似，可以用框图表示系统信号传递的关系。对于式（1.9）和式（1.10）所描述的系统，它们的框图分别如图1.2a和1.2b所示。\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/4066d07e905e7ac06d77d403e4e382887c0ffda5fd9ff8264b63385bebb9b4c3.jpg)\n\n图1.2 系统信号传递框图\n\n图中用单线箭头表示标量信号,用双线箭头表示矢量信号。\n\n从状态空间表达式和系统框图都能清楚地说明：它们既表征了输入对于系统内部状态的因果关系，又反映了内部状态对于外部输出的影响，所以状态空间表达式是对系统的一种完全的描述。\n\n# 1.2 状态变量及状态空间表达式的模拟结构图\n\n在状态空间分析中，采用模拟结构图来反映系统各状态变量之间的信息传递关系，对建立系统的状态空间表达式很有帮助。\n\n为了简便,这里用框图代替模拟计算机的详细模拟图。状态空间表达式的框图可按如下步骤绘制：积分器的数目应等于状态变量数,将它们画在适当的位置,每个积分器的输出表示相应的某个状态变量,然后根据所给的状态方程和输出方程,画出相应的加法器和比例器,最后用箭头将这些元件连接起来。\n\n对于一阶标量微分方程：\n\n$$\n\\dot {x} = a x + b u\n$$\n\n它的模拟结构图示于图1.3。\n\n再以三阶微分方程为例：\n\n$$\n\\ddot {x} + a _ {2} \\ddot {x} + a _ {1} \\dot {x} + a _ {0} x = b u\n$$\n\n将最高阶导数留在等式左边，上式可改写成",
+      "_chunk_first_line": "和经典控制理论相类似，可以用框图表示系统信号传递的关系。对于式（1.9）和式（1.10）所描述的系统，它们的框图分别如图1.2a和1.2b所示。",
+      "_note_index": 14
+    },
+    {
+      "chunk_id": "chunk_0033",
+      "chapter": "绪论",
+      "topic": "三阶系统模拟结构图与标准型",
+      "content": "$$\n\\ddot {x} + a _ {2} \\ddot {x} + a _ {1} \\dot {x} + a _ {0} x = b u\n$$\n\n将最高阶导数留在等式左边，上式可改写成\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/b6ca5768966c1fcaf7be79c8d6410a53fcd7d48e00c7516ec890fd0b8c12f809.jpg)\n\n图1.3 一阶标量微分方程的模拟结构图\n\n$$\n\\ddot {x} = - a _ {0} x - a _ {1} \\dot {x} - a _ {2} \\ddot {x} + b u\n$$\n\n它的模拟结构图示于图1.4。\n\n同样，已知状态空间表达式，也可画出相应的模拟结构图，图1.5是下列三阶系统的模拟结构图。\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = x _ {2} \\\\ \\dot {x} _ {2} = x _ {3} \\\\ ",
+      "summary": "三阶微分方程 \\$\\ddot{x}+a_2\\ddot{x}+a_1\\dot{x}+a_0x=bu\\$ 转化为三个一阶方程，通过积分器实现。模拟结构图：积分器数目等于状态变量数。",
+      "tags": [
+        "模拟结构图",
+        "三阶系统",
+        "积分器",
+        "状态方程"
+      ],
+      "concept_links": {
+        "chunk_0032": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0031": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T16:10:41.392666",
+      "_full_chunk_text": "$$\n\\ddot {x} + a _ {2} \\ddot {x} + a _ {1} \\dot {x} + a _ {0} x = b u\n$$\n\n将最高阶导数留在等式左边，上式可改写成\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/b6ca5768966c1fcaf7be79c8d6410a53fcd7d48e00c7516ec890fd0b8c12f809.jpg)\n\n图1.3 一阶标量微分方程的模拟结构图\n\n$$\n\\ddot {x} = - a _ {0} x - a _ {1} \\dot {x} - a _ {2} \\ddot {x} + b u\n$$\n\n它的模拟结构图示于图1.4。\n\n同样，已知状态空间表达式，也可画出相应的模拟结构图，图1.5是下列三阶系统的模拟结构图。\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = x _ {2} \\\\ \\dot {x} _ {2} = x _ {3} \\\\ \\dot {x} _ {3} = - 6 x _ {1} - 3 x _ {2} - 2 x _ {3} + u \\\\ y = x _ {1} + x _ {2} \\\\ \\end{array}\n$$\n\n图1.6是下列二输入二输出的二阶系统的模拟结构图。",
+      "_chunk_first_line": "$$",
+      "_note_index": 15
+    },
+    {
+      "chunk_id": "chunk_0034",
+      "chapter": "绪论",
+      "topic": "核心概念：二输入二输出系统的模拟结构图",
+      "content": "图1.6是下列二输入二输出的二阶系统的模拟结构图。\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + b _ {1 1} u _ {1} + b _ {1 2} u _ {2} \\\\ \\dot {x} _ {2} = a _ {2 1} x _ {1} + a _ {2 2} x _ {2} + b _ {2 1} u _ {1} + b _ {2 2} u _ {2} \\\\ y _ {1} = c _ {1 1} x _ {1} + c _ {1 2} x _ {2} \\\\ y _ {2} = c _ {2 1} x _ {1} + c _ {2 2} x _ {2} \\\\ \\end{array}\n$$\n\n从图1.6可以看出，一个二输入二输出的二阶系统，其结构图已经相当复杂，如果系统再复杂一些，其信息传递关系更为繁琐。所以多输入多输出系统的结构图多以图1.2所示矢量结构图的形式表示。\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/86496f5c202b87b1540d70d6849ba84cd27b062ae438625b98fe628a0a9f7964.jpg)\n\n图1.4 三阶微分方程的模拟结构图\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/637c30f4489881acc2e7a1edd00615e0ddce8592b8d0ae510ab484b5010bb8a1.jpg)",
+      "summary": "二输入二输出二阶系统的模拟结构图（图1.6）展示了多变量系统的状态空间表达式的图形化表示。该系统状态方程和输出方程构成完整的动态描述，模拟结构图将积分器、加法器、比例器的信号传递关系可视化。",
+      "tags": [
+        "模拟结构图",
+        "二阶系统",
+        "状态方程",
+        "输出方程"
+      ],
+      "concept_links": {
+        "chunk_0033": {
+          "type": "tag:状态方程",
+          "shared_tags": [
+            "状态方程",
+            "模拟结构图"
+          ],
+          "retrieval_score": 4.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0032": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T18:02:57.972284",
+      "_full_chunk_text": "图1.6是下列二输入二输出的二阶系统的模拟结构图。\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = a _ {1 1} x _ {1} + a _ {1 2} x _ {2} + b _ {1 1} u _ {1} + b _ {1 2} u _ {2} \\\\ \\dot {x} _ {2} = a _ {2 1} x _ {1} + a _ {2 2} x _ {2} + b _ {2 1} u _ {1} + b _ {2 2} u _ {2} \\\\ y _ {1} = c _ {1 1} x _ {1} + c _ {1 2} x _ {2} \\\\ y _ {2} = c _ {2 1} x _ {1} + c _ {2 2} x _ {2} \\\\ \\end{array}\n$$\n\n从图1.6可以看出，一个二输入二输出的二阶系统，其结构图已经相当复杂，如果系统再复杂一些，其信息传递关系更为繁琐。所以多输入多输出系统的结构图多以图1.2所示矢量结构图的形式表示。\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/86496f5c202b87b1540d70d6849ba84cd27b062ae438625b98fe628a0a9f7964.jpg)\n\n图1.4 三阶微分方程的模拟结构图\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/637c30f4489881acc2e7a1edd00615e0ddce8592b8d0ae510ab484b5010bb8a1.jpg)",
+      "_chunk_first_line": "图1.6是下列二输入二输出的二阶系统的模拟结构图。",
+      "_note_index": 16
+    },
+    {
+      "chunk_id": "chunk_0035",
+      "chapter": "绪论",
+      "topic": "核心概念：![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-0",
+      "content": "![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/637c30f4489881acc2e7a1edd00615e0ddce8592b8d0ae510ab484b5010bb8a1.jpg)\n\n图1.5 系统模拟结构图\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/9069ad40d8f9d8280493ddfdf5bba15b18d376780972de0b930650dfaf255717.jpg)\n\n图1.6 二输入二输出的二阶系统的模拟结构图\n\n# 1.3 状态变量及状态空间表达式的建立（一）\n\n用状态空间法分析系统时，首先要建立给定系统的状态空间表达式。这个表达式一般可以从三个途径求得：一是由系统框图来建立，即根据系统各个环节的实际连接，写出相应的状态空间表达式；二是从系统的物理或化学的机理出发进行推导；三是由描述系统运动过程的高阶微分方程或传递函数予以演化而得。\n\n本节先介绍前两种方法。\n\n# 1.3.1 从系统框图出发建立状态空间表达式\n\n该法是首先将系统的各个环节按1.2节所述，变换成相应的模拟结构图，并把每个积分器的输出选作一个状态变量 $x_{i}$ ，其输入便是相应的 $\\dot{x}_{i}$ ；然后，由模拟图直接写出系统的状态方程和输出方程。\n\n【例1-1】系统框图如图1.7a所示，输入为 $u$ ，输出为 $y$ 。试求其状态空间表达式。\n\n解 各环节的模拟结构图如图1.7b所示。\n\n从图可知",
+      "summary": "![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/637c30f4489881acc2e7a1edd00615e0ddce8592b8d0ae510ab484b5010bb8a1.jpg)  图1.5 系统模拟结构图  ![image](https:/",
+      "tags": [
+        "state-space",
+        "state-variable",
+        "transfer-function",
+        "differential-equation",
+        "state-equation",
+        "simulation-structure",
+        "block-diagram",
+        "integrator"
+      ],
+      "concept_links": {
+        "chunk_0032": {
+          "type": "tag:simulation-structure",
+          "shared_tags": [
+            "simulation-structure",
+            "block-diagram",
+            "state-space"
+          ],
+          "retrieval_score": 5.1,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0031": {
+          "type": "tag:block-diagram",
+          "shared_tags": [
+            "block-diagram",
+            "state-space"
+          ],
+          "retrieval_score": 3.8,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T20:02:06.125525",
+      "_full_chunk_text": "![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/637c30f4489881acc2e7a1edd00615e0ddce8592b8d0ae510ab484b5010bb8a1.jpg)\n\n图1.5 系统模拟结构图\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/9069ad40d8f9d8280493ddfdf5bba15b18d376780972de0b930650dfaf255717.jpg)\n\n图1.6 二输入二输出的二阶系统的模拟结构图\n\n# 1.3 状态变量及状态空间表达式的建立（一）\n\n用状态空间法分析系统时，首先要建立给定系统的状态空间表达式。这个表达式一般可以从三个途径求得：一是由系统框图来建立，即根据系统各个环节的实际连接，写出相应的状态空间表达式；二是从系统的物理或化学的机理出发进行推导；三是由描述系统运动过程的高阶微分方程或传递函数予以演化而得。\n\n本节先介绍前两种方法。\n\n# 1.3.1 从系统框图出发建立状态空间表达式\n\n该法是首先将系统的各个环节按1.2节所述，变换成相应的模拟结构图，并把每个积分器的输出选作一个状态变量 $x_{i}$ ，其输入便是相应的 $\\dot{x}_{i}$ ；然后，由模拟图直接写出系统的状态方程和输出方程。\n\n【例1-1】系统框图如图1.7a所示，输入为 $u$ ，输出为 $y$ 。试求其状态空间表达式。\n\n解 各环节的模拟结构图如图1.7b所示。\n\n从图可知",
+      "_chunk_first_line": "![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/6",
+      "_note_index": 17
+    },
+    {
+      "chunk_id": "chunk_0036",
+      "chapter": "绪论",
+      "topic": "核心概念：系统框图及模拟结构图, 各环节的模拟结构图如图, 系统的状态空间表达式为",
+      "content": "解 各环节的模拟结构图如图1.7b所示。\n\n从图可知\n\n$$\n\\begin{array}{r l} & {\\dot {x} _ {1} = \\frac {K _ {3}}{T _ {3}} x _ {2}} \\\\ & {\\dot {x} _ {2} = - \\frac {1}{T _ {2}} x _ {2} + \\frac {K _ {2}}{T _ {2}} x _ {3}} \\\\ & {\\dot {x} _ {3} = - \\frac {1}{T _ {1}} x _ {3} - \\frac {K _ {1} K _ {4}}{T _ {1}} x _ {1} + \\frac {K _ {1}}{T _ {1}} u} \\\\ & {y = x _ {1}} \\end{array} \\text {状 态 方 程}\n$$\n\n$$\n\\frac {4 8}{5 + p} = 1 + \\frac {2 - p}{5 + p}.\n$$\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-40",
+      "summary": "解 各环节的模拟结构图如图1.7b所示。  从图可知  $$ \\begin{array}{r l} & {\\dot {x} _ {1} = \\frac {K _ {3}}{T _ {3}} x _ {2}} \\\\ & {\\dot {x} _ {2} = - \\frac {1}{T _ {2}} x _ {2} + \\frac {K _ {2}}{T _ {2}} x _ {3}} \\\\ & {\\d...",
+      "tags": [
+        "系统框图及模拟结构图",
+        "各环节的模拟结构图如图",
+        "系统的状态空间表达式为",
+        "写成矢量矩阵形式",
+        "从图可知"
+      ],
+      "concept_links": {
+        "chunk_0035": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0034": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T22:01:11.467228",
+      "_full_chunk_text": "解 各环节的模拟结构图如图1.7b所示。\n\n从图可知\n\n$$\n\\begin{array}{r l} & {\\dot {x} _ {1} = \\frac {K _ {3}}{T _ {3}} x _ {2}} \\\\ & {\\dot {x} _ {2} = - \\frac {1}{T _ {2}} x _ {2} + \\frac {K _ {2}}{T _ {2}} x _ {3}} \\\\ & {\\dot {x} _ {3} = - \\frac {1}{T _ {1}} x _ {3} - \\frac {K _ {1} K _ {4}}{T _ {1}} x _ {1} + \\frac {K _ {1}}{T _ {1}} u} \\\\ & {y = x _ {1}} \\end{array} \\text {状 态 方 程}\n$$\n\n$$\n\\frac {4 8}{5 + p} = 1 + \\frac {2 - p}{5 + p}.\n$$\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/aa4c4157014ab835f086c6a4d54655b8ad5c7465c3447d251d23ad15379e6425.jpg)\n\nb)\n\n图1.7 系统框图及模拟结构图\n\n写成矢量矩阵形式，系统的状态空间表达式为：",
+      "_chunk_first_line": "解 各环节的模拟结构图如图1.7b所示。",
+      "_note_index": 18
+    },
+    {
+      "chunk_id": "chunk_0037",
+      "chapter": "绪论",
+      "topic": "Core concept: 状态空间",
+      "content": "写成矢量矩阵形式，系统的状态空间表达式为：\n\n$$\n\\begin{array}{l} \\dot {\\boldsymbol {x}} = \\left( \\begin{array}{c c c} 0 & \\frac {K _ {3}}{T _ {3}} & 0 \\\\ 0 & - \\frac {1}{T _ {2}} & \\frac {K _ {2}}{T _ {2}} \\\\ - \\frac {K _ {1} K _ {4}}{T _ {1}} & 0 & - \\frac {1}{T _ {1}} \\end{array} \\right) \\boldsymbol {x} + \\binom {0} {\\left( \\begin{array}{l} 0 \\\\ 0 \\\\ \\frac {K _ {1}}{T _ {1}} \\end{array} \\right)} u \\tag {1.11} \\\\ \\mathbf {y} = \\left( \\begin{array}{l l l} 1, & 0, & 0 \\end{array} \\right) \\mathbf {x} \\\\ \\end{array}\n$$\n\n对于含有零点的环节，如图1.8a所示的系统，可将其展开成部分分式，即 $\\frac{s + z}{s + p} = 1 + \\frac{z - p}{s + p}$ ，从而得到等效框图如图1.8b所示，模拟结构图如图1.8c所示。从图可得系统的状态空间表达式为：",
+      "summary": "写成矢量矩阵形式，系统的状态空间表达式为：  $$ \\begin{array}{l} \\dot {\\boldsymbol {x}} = \\left( \\begin{array}{c c c} 0 & \\frac {K _ {3}}{T _ {3}} & 0 \\\\ 0 & - \\frac {1}{T ...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0035": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0036": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:18.712100",
+      "_full_chunk_text": "写成矢量矩阵形式，系统的状态空间表达式为：\n\n$$\n\\begin{array}{l} \\dot {\\boldsymbol {x}} = \\left( \\begin{array}{c c c} 0 & \\frac {K _ {3}}{T _ {3}} & 0 \\\\ 0 & - \\frac {1}{T _ {2}} & \\frac {K _ {2}}{T _ {2}} \\\\ - \\frac {K _ {1} K _ {4}}{T _ {1}} & 0 & - \\frac {1}{T _ {1}} \\end{array} \\right) \\boldsymbol {x} + \\binom {0} {\\left( \\begin{array}{l} 0 \\\\ 0 \\\\ \\frac {K _ {1}}{T _ {1}} \\end{array} \\right)} u \\tag {1.11} \\\\ \\mathbf {y} = \\left( \\begin{array}{l l l} 1, & 0, & 0 \\end{array} \\right) \\mathbf {x} \\\\ \\end{array}\n$$\n\n对于含有零点的环节，如图1.8a所示的系统，可将其展开成部分分式，即 $\\frac{s + z}{s + p} = 1 + \\frac{z - p}{s + p}$ ，从而得到等效框图如图1.8b所示，模拟结构图如图1.8c所示。从图可得系统的状态空间表达式为：",
+      "_chunk_first_line": "写成矢量矩阵形式，系统的状态空间表达式为：",
+      "_note_index": 19
+    },
+    {
+      "chunk_id": "chunk_0038",
+      "chapter": "绪论",
+      "topic": "Core concept: 状态空间",
+      "content": "对于含有零点的环节，如图1.8a所示的系统，可将其展开成部分分式，即 $\\frac{s + z}{s + p} = 1 + \\frac{z - p}{s + p}$ ，从而得到等效框图如图1.8b所示，模拟结构图如图1.8c所示。从图可得系统的状态空间表达式为：\n\n$$\n\\begin{array}{l} \\dot {\\boldsymbol {x}} = \\left( \\begin{array}{r r r} - a & 1 & 0 \\\\ - K & 0 & K \\\\ - (z - p) & 0 & - p \\end{array} \\right) \\boldsymbol {x} + \\left( \\begin{array}{c} 0 \\\\ K \\\\ z - p \\end{array} \\right) u \\tag {1.12} \\\\ \\mathbf {y} = \\left(1, 0, 0\\right) \\mathbf {x} \\\\ \\end{array}\n$$\n\n# 1.3.2 从系统的机理出发建立状态空间表达式\n\n一般常见的控制系统，按其能量属性，可分为电气、机械、机电、气动液压、热力等系统。根据其物理规律，如基尔霍夫定律、牛顿定律、能量守恒定律等，即可建立系\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/27ee4fc6e8f5530302cee5dee78edda36923526c6b4fcfa3a4d7578846876dfb.jpg)\n\na)",
+      "summary": "对于含有零点的环节，如图1.8a所示的系统，可将其展开成部分分式，即 $\\frac{s + z}{s + p} = 1 + \\frac{z - p}{s + p}$ ，从而得到等效框图如图1.8b所示，模拟结构图如图1.8c所示。从图可得系统的状态空间表达式为：  $$ \\begin{array}{...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0037": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0035": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.1,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:20.278289",
+      "_full_chunk_text": "对于含有零点的环节，如图1.8a所示的系统，可将其展开成部分分式，即 $\\frac{s + z}{s + p} = 1 + \\frac{z - p}{s + p}$ ，从而得到等效框图如图1.8b所示，模拟结构图如图1.8c所示。从图可得系统的状态空间表达式为：\n\n$$\n\\begin{array}{l} \\dot {\\boldsymbol {x}} = \\left( \\begin{array}{r r r} - a & 1 & 0 \\\\ - K & 0 & K \\\\ - (z - p) & 0 & - p \\end{array} \\right) \\boldsymbol {x} + \\left( \\begin{array}{c} 0 \\\\ K \\\\ z - p \\end{array} \\right) u \\tag {1.12} \\\\ \\mathbf {y} = \\left(1, 0, 0\\right) \\mathbf {x} \\\\ \\end{array}\n$$\n\n# 1.3.2 从系统的机理出发建立状态空间表达式\n\n一般常见的控制系统，按其能量属性，可分为电气、机械、机电、气动液压、热力等系统。根据其物理规律，如基尔霍夫定律、牛顿定律、能量守恒定律等，即可建立系\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/27ee4fc6e8f5530302cee5dee78edda36923526c6b4fcfa3a4d7578846876dfb.jpg)\n\na)",
+      "_chunk_first_line": "对于含有零点的环节，如图1.8a所示的系统，可将其展开成部分分式，即 $\\frac{s + z}{s + p} = 1 + \\frac{z - p}{s + p}$ ，从而得到等效框图如图1.8b所示",
+      "_note_index": 20
+    },
+    {
+      "chunk_id": "chunk_0039",
+      "chapter": "绪论",
+      "topic": "Chunk 39 content",
+      "content": "a)\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/de7ae8f950301d0fbb974ef6c6cb03ffa9440328374b41f11e380c33f92ea31a.jpg)\n\nb)\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/7889baced352cd94e1c09d3dc9ffe4e26117f036cb2c9c53f493319d90bbe4da.jpg)\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/364d1b110a11cdc4576da73dce8133631f58d4a52834ed500bfb32745d22f84a.jpg)\n\nc）\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/d7b540fb0d1afd3cd40fcc80c4ab931082a61fae013646265d714c682fdeab09.jpg)\n\n图1.8 系统框图及模拟结构图\n\n统的状态方程。当指定系统的输出时，很容易写出系统的输出方程。\n\n【例1-2】 电网络如图1.9所示，输入量为电流源，并指定以电容 $C_1$ 和 $C_2$ 上的电压作为输出，求此网络的状态空间表达式。",
+      "summary": "a)  ![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/de7ae8f950301d0fbb974ef6c6cb03ffa9440328374b41f...",
+      "tags": [
+        "state-space",
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0035": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 3.8,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0038": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:25.262085",
+      "_full_chunk_text": "a)\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/de7ae8f950301d0fbb974ef6c6cb03ffa9440328374b41f11e380c33f92ea31a.jpg)\n\nb)\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/7889baced352cd94e1c09d3dc9ffe4e26117f036cb2c9c53f493319d90bbe4da.jpg)\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/364d1b110a11cdc4576da73dce8133631f58d4a52834ed500bfb32745d22f84a.jpg)\n\nc）\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/d7b540fb0d1afd3cd40fcc80c4ab931082a61fae013646265d714c682fdeab09.jpg)\n\n图1.8 系统框图及模拟结构图\n\n统的状态方程。当指定系统的输出时，很容易写出系统的输出方程。\n\n【例1-2】 电网络如图1.9所示，输入量为电流源，并指定以电容 $C_1$ 和 $C_2$ 上的电压作为输出，求此网络的状态空间表达式。",
+      "_chunk_first_line": "a)",
+      "_note_index": 21
+    },
+    {
+      "chunk_id": "chunk_0040",
+      "chapter": "绪论",
+      "topic": "Core concept: 状态空间, 状态方程",
+      "content": "统的状态方程。当指定系统的输出时，很容易写出系统的输出方程。\n\n【例1-2】 电网络如图1.9所示，输入量为电流源，并指定以电容 $C_1$ 和 $C_2$ 上的电压作为输出，求此网络的状态空间表达式。\n\n解此网络没有纯电容回路，也没有纯电感割集，因有两个电容两个电感，共四个独立储能元件，故有四个独立变量。\n\n以电容 $C_1$ 和 $C_2$ 上的电压 $u_{C_1}$ 和 $u_{C_2}$ 及电感 $L_{1}$ 和 $L_{2}$ 中的电流 $i_{1}$ 和 $i_{2}$ 为状态变量。即令：\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/80bd1e844f56d466577f9d419e49f08426e0d48ea8feb9c7fa8de31a78f5f520.jpg)\n\n图1.9 电路图\n\n$$\nu _ {C _ {1}} = x _ {1}, \\quad u _ {C _ {2}} = x _ {2}\n$$\n\n$$\ni _ {1} = x _ {3}, \\quad i _ {2} = x _ {4}\n$$\n\n从节点 $a$ 、 $b$ 、 $c$ ，按基尔霍夫电流定律列出电流方程：\n\n$$\ni + i _ {3} + x _ {3} - C _ {2} \\dot {x} _ {2} = 0\n$$\n\n$$\nC _ {1} \\dot {x} _ {1} + x _ {3} + x _ {4} = 0\n$$\n\n$$\nC _ {2} \\dot {x} _ {4} + x _ {4} - i _ {4} = 0\n$$\n\n从三个回路 $l_{1}, l_{2}, l_{3}$ ，按基尔霍夫电压定律列出电压方程：",
+      "summary": "统的状态方程。当指定系统的输出时，很容易写出系统的输出方程。  【例1-2】 电网络如图1.9所示，输入量为电流源，并指定以电容 $C_1$ 和 $C_2$ 上的电压作为输出，求此网络的状态空间表达式。  解此网络没有纯电容回路，也没有纯电感割集，因有两个电容两个电感，共四个独立储能元件，故有四个独...",
+      "tags": [
+        "state-space",
+        "state-equation"
+      ],
+      "concept_links": {
+        "chunk_0039": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 4.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0035": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 3.5,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:29.105355",
+      "_full_chunk_text": "统的状态方程。当指定系统的输出时，很容易写出系统的输出方程。\n\n【例1-2】 电网络如图1.9所示，输入量为电流源，并指定以电容 $C_1$ 和 $C_2$ 上的电压作为输出，求此网络的状态空间表达式。\n\n解此网络没有纯电容回路，也没有纯电感割集，因有两个电容两个电感，共四个独立储能元件，故有四个独立变量。\n\n以电容 $C_1$ 和 $C_2$ 上的电压 $u_{C_1}$ 和 $u_{C_2}$ 及电感 $L_{1}$ 和 $L_{2}$ 中的电流 $i_{1}$ 和 $i_{2}$ 为状态变量。即令：\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/80bd1e844f56d466577f9d419e49f08426e0d48ea8feb9c7fa8de31a78f5f520.jpg)\n\n图1.9 电路图\n\n$$\nu _ {C _ {1}} = x _ {1}, \\quad u _ {C _ {2}} = x _ {2}\n$$\n\n$$\ni _ {1} = x _ {3}, \\quad i _ {2} = x _ {4}\n$$\n\n从节点 $a$ 、 $b$ 、 $c$ ，按基尔霍夫电流定律列出电流方程：\n\n$$\ni + i _ {3} + x _ {3} - C _ {2} \\dot {x} _ {2} = 0\n$$\n\n$$\nC _ {1} \\dot {x} _ {1} + x _ {3} + x _ {4} = 0\n$$\n\n$$\nC _ {2} \\dot {x} _ {4} + x _ {4} - i _ {4} = 0\n$$\n\n从三个回路 $l_{1}, l_{2}, l_{3}$ ，按基尔霍夫电压定律列出电压方程：",
+      "_chunk_first_line": "统的状态方程。当指定系统的输出时，很容易写出系统的输出方程。",
+      "_note_index": 22
+    },
+    {
+      "chunk_id": "chunk_0041",
+      "chapter": "绪论",
+      "topic": "Chunk 41 content",
+      "content": "$$\nC _ {2} \\dot {x} _ {4} + x _ {4} - i _ {4} = 0\n$$\n\n从三个回路 $l_{1}, l_{2}, l_{3}$ ，按基尔霍夫电压定律列出电压方程：\n\n$$\n\\begin{array}{l} - L _ {1} \\dot {x} _ {3} + x _ {1} + R _ {1} i _ {3} = 0 \\\\ - x _ {1} + L _ {2} \\dot {x} _ {4} + R _ {2} i _ {4} = 0 \\\\ L _ {2} \\dot {x} _ {4} - L _ {1} \\dot {x} _ {3} - x _ {2} = 0 \\\\ \\end{array}\n$$\n\n从以上6个式子中消去非独立变量 $i_3$ 和 $i_4$ ，得：\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = - \\frac {1}{C _ {1}} x _ {3} - \\frac {1}{C _ {1}} x _ {4} \\\\ R _ {1} C _ {2} \\dot {x} _ {2} - L _ {1} \\dot {x} _ {3} = - x _ {1} + R _ {1} x _ {3} + R _ {1} i \\\\ R _ {2} C _ {2} \\dot {x} _ {2} + L _ {2} \\dot {x} _ {4} = x _ {1} - R _ {2} x _ {4} \\\\ - L _ {1} \\dot {x} _ {3} + L _ {2} \\dot {x} _ {4} = x _ {2} \\\\ \\end{array}\n$$\n\n从上述四式解出 $\\dot{x}_1$ 、 $\\dot{x}_2$ 、 $\\dot{x}_3$ 、 $\\dot{x}_4$ ，最后得到状态空间表达式：",
+      "summary": "$$ C _ {2} \\dot {x} _ {4} + x _ {4} - i _ {4} = 0 $$  从三个回路 $l_{1}, l_{2}, l_{3}$ ，按基尔霍夫电压定律列出电压方程：  $$ \\begin{array}{l} - L _ {1} \\dot {x} _ {3} + x ...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0040": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0039": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:34.089476",
+      "_full_chunk_text": "$$\nC _ {2} \\dot {x} _ {4} + x _ {4} - i _ {4} = 0\n$$\n\n从三个回路 $l_{1}, l_{2}, l_{3}$ ，按基尔霍夫电压定律列出电压方程：\n\n$$\n\\begin{array}{l} - L _ {1} \\dot {x} _ {3} + x _ {1} + R _ {1} i _ {3} = 0 \\\\ - x _ {1} + L _ {2} \\dot {x} _ {4} + R _ {2} i _ {4} = 0 \\\\ L _ {2} \\dot {x} _ {4} - L _ {1} \\dot {x} _ {3} - x _ {2} = 0 \\\\ \\end{array}\n$$\n\n从以上6个式子中消去非独立变量 $i_3$ 和 $i_4$ ，得：\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = - \\frac {1}{C _ {1}} x _ {3} - \\frac {1}{C _ {1}} x _ {4} \\\\ R _ {1} C _ {2} \\dot {x} _ {2} - L _ {1} \\dot {x} _ {3} = - x _ {1} + R _ {1} x _ {3} + R _ {1} i \\\\ R _ {2} C _ {2} \\dot {x} _ {2} + L _ {2} \\dot {x} _ {4} = x _ {1} - R _ {2} x _ {4} \\\\ - L _ {1} \\dot {x} _ {3} + L _ {2} \\dot {x} _ {4} = x _ {2} \\\\ \\end{array}\n$$\n\n从上述四式解出 $\\dot{x}_1$ 、 $\\dot{x}_2$ 、 $\\dot{x}_3$ 、 $\\dot{x}_4$ ，最后得到状态空间表达式：",
+      "_chunk_first_line": "$$",
+      "_note_index": 23
+    },
+    {
+      "chunk_id": "chunk_0042",
+      "chapter": "绪论",
+      "topic": "Core concept: 状态空间",
+      "content": "从上述四式解出 $\\dot{x}_1$ 、 $\\dot{x}_2$ 、 $\\dot{x}_3$ 、 $\\dot{x}_4$ ，最后得到状态空间表达式：\n\n$$\n\\begin{array}{l} \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{array}{c c c c} 0 & 0 & - \\frac {1}{C _ {1}} & - \\frac {1}{C _ {1}} \\\\ 0 & - \\frac {1}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {2}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {1}} & - \\frac {R _ {1}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {2}} & - \\frac {R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) \\left( \\begin{array}{l} x _ {1} \\\\ x _ {2} \\\\ x _ {3} \\\\ x _ {4} \\end{array} \\right) + \\left( \\begin{array}{c} 0 \\\\ \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) i \\\\ \\binom {y _ {1}} {y _ {2}} = \\binom {u _ {C _ {1}}} {u _ {C _ {2}}} = \\left( \\begin{array}{l l l l} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}} \\\\ \\end{array}\n$$",
+      "summary": "从上述四式解出 $\\dot{x}_1$ 、 $\\dot{x}_2$ 、 $\\dot{x}_3$ 、 $\\dot{x}_4$ ，最后得到状态空间表达式：  $$ \\begin{array}{l} \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ ...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0041": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0040": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:35.649941",
+      "_full_chunk_text": "从上述四式解出 $\\dot{x}_1$ 、 $\\dot{x}_2$ 、 $\\dot{x}_3$ 、 $\\dot{x}_4$ ，最后得到状态空间表达式：\n\n$$\n\\begin{array}{l} \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{array}{c c c c} 0 & 0 & - \\frac {1}{C _ {1}} & - \\frac {1}{C _ {1}} \\\\ 0 & - \\frac {1}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {2}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {1}} & - \\frac {R _ {1}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {2}} & - \\frac {R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) \\left( \\begin{array}{l} x _ {1} \\\\ x _ {2} \\\\ x _ {3} \\\\ x _ {4} \\end{array} \\right) + \\left( \\begin{array}{c} 0 \\\\ \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) i \\\\ \\binom {y _ {1}} {y _ {2}} = \\binom {u _ {C _ {1}}} {u _ {C _ {2}}} = \\left( \\begin{array}{l l l l} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}} \\\\ \\end{array}\n$$",
+      "_chunk_first_line": "从上述四式解出 $\\dot{x}_1$ 、 $\\dot{x}_2$ 、 $\\dot{x}_3$ 、 $\\dot{x}_4$ ，最后得到状态空间表达式：",
+      "_note_index": 24
+    },
+    {
+      "chunk_id": "chunk_0043",
+      "chapter": "绪论",
+      "topic": "Chunk 43 content",
+      "content": "$$\n\\begin{array}{l} \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{array}{c c c c} 0 & 0 & - \\frac {1}{C _ {1}} & - \\frac {1}{C _ {1}} \\\\ 0 & - \\frac {1}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {2}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {1}} & - \\frac {R _ {1}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {2}} & - \\frac {R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) \\left( \\begin{array}{l} x _ {1} \\\\ x _ {2} \\\\ x _ {3} \\\\ x _ {4} \\end{array} \\right) + \\left( \\begin{array}{c} 0 \\\\ \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) i \\\\ \\binom {y _ {1}} {y _ {2}} = \\binom {u _ {C _ {1}}} {u _ {C _ {2}}} = \\left( \\begin{array}{l l l l} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}} \\\\ \\end{array}\n$$\n\n【例1-3】图1.10所示的机械运动模型中， $M_{1}$ 、 $M_{2}$ 为质量块（同时也为质量）， $K_{1}$ 、 $K_{2}$ 为弹簧，也为弹性系数， $B_{1}$ 、 $B_{2}$ 是阻尼器，列写出在外力 $f$ 作用下，以质量块 $M_{1}$ 和 $M_{2}$ 的位移 $y_{1}$ 和 $y_{2}$ 为输出的状态空间表达式。",
+      "summary": "$$ \\begin{array}{l} \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{a...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0042": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0041": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:40.640028",
+      "_full_chunk_text": "$$\n\\begin{array}{l} \\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{array}{c c c c} 0 & 0 & - \\frac {1}{C _ {1}} & - \\frac {1}{C _ {1}} \\\\ 0 & - \\frac {1}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {2}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {1}} & - \\frac {R _ {1}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ \\frac {1}{L _ {2}} & - \\frac {R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} & - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) \\left( \\begin{array}{l} x _ {1} \\\\ x _ {2} \\\\ x _ {3} \\\\ x _ {4} \\end{array} \\right) + \\left( \\begin{array}{c} 0 \\\\ \\frac {R _ {1}}{C _ {2} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {1} \\left(R _ {1} + R _ {2}\\right)} \\\\ - \\frac {R _ {1} R _ {2}}{L _ {2} \\left(R _ {1} + R _ {2}\\right)} \\end{array} \\right) i \\\\ \\binom {y _ {1}} {y _ {2}} = \\binom {u _ {C _ {1}}} {u _ {C _ {2}}} = \\left( \\begin{array}{l l l l} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}} \\\\ \\end{array}\n$$\n\n【例1-3】图1.10所示的机械运动模型中， $M_{1}$ 、 $M_{2}$ 为质量块（同时也为质量）， $K_{1}$ 、 $K_{2}$ 为弹簧，也为弹性系数， $B_{1}$ 、 $B_{2}$ 是阻尼器，列写出在外力 $f$ 作用下，以质量块 $M_{1}$ 和 $M_{2}$ 的位移 $y_{1}$ 和 $y_{2}$ 为输出的状态空间表达式。",
+      "_chunk_first_line": "$$",
+      "_note_index": 25
+    },
+    {
+      "chunk_id": "chunk_0044",
+      "chapter": "绪论",
+      "topic": "Core concept: 状态空间",
+      "content": "【例1-3】图1.10所示的机械运动模型中， $M_{1}$ 、 $M_{2}$ 为质量块（同时也为质量）， $K_{1}$ 、 $K_{2}$ 为弹簧，也为弹性系数， $B_{1}$ 、 $B_{2}$ 是阻尼器，列写出在外力 $f$ 作用下，以质量块 $M_{1}$ 和 $M_{2}$ 的位移 $y_{1}$ 和 $y_{2}$ 为输出的状态空间表达式。\n\n解 弹簧 $K_{1} 、 K_{2}$ , 质量块 $M_{1} 、 M_{2}$ 是储能元件, 故弹簧的伸长度 $y_{1} 、 y_{2}$ , 质量块 $M_{1} 、 M_{2}$\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/da1d74283899870ac212ac212f15c3a8fbecc0a6170b0a0b8119222f824c0867.jpg)\n\n图1.10 机械运动模型图\n\n的速度 $v_{1} 、 v_{2}$ 可以选作状态变量。由结构图可以直接看出, 它们是相互独立的。选:\n\n$$\n\\begin{array}{l} x _ {1} = y _ {1}, \\quad x _ {2} = y _ {2} \\\\ x _ {3} = v _ {1} = \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}, \\quad x _ {4} = v _ {2} = \\frac {\\mathrm {d} y _ {2}}{\\mathrm {d} t} \\\\ \\end{array}\n$$\n\n根据牛顿定律，对于 $M_{1}$ ，有：",
+      "summary": "【例1-3】图1.10所示的机械运动模型中， $M_{1}$ 、 $M_{2}$ 为质量块（同时也为质量）， $K_{1}$ 、 $K_{2}$ 为弹簧，也为弹性系数， $B_{1}$ 、 $B_{2}$ 是阻尼器，列写出在外力 $f$ 作用下，以质量块 $M_{1}$ 和 $M_{2}$ 的位移 ...",
+      "tags": [
+        "state-space"
+      ],
+      "concept_links": {
+        "chunk_0043": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0042": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:42.200378",
+      "_full_chunk_text": "【例1-3】图1.10所示的机械运动模型中， $M_{1}$ 、 $M_{2}$ 为质量块（同时也为质量）， $K_{1}$ 、 $K_{2}$ 为弹簧，也为弹性系数， $B_{1}$ 、 $B_{2}$ 是阻尼器，列写出在外力 $f$ 作用下，以质量块 $M_{1}$ 和 $M_{2}$ 的位移 $y_{1}$ 和 $y_{2}$ 为输出的状态空间表达式。\n\n解 弹簧 $K_{1} 、 K_{2}$ , 质量块 $M_{1} 、 M_{2}$ 是储能元件, 故弹簧的伸长度 $y_{1} 、 y_{2}$ , 质量块 $M_{1} 、 M_{2}$\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/da1d74283899870ac212ac212f15c3a8fbecc0a6170b0a0b8119222f824c0867.jpg)\n\n图1.10 机械运动模型图\n\n的速度 $v_{1} 、 v_{2}$ 可以选作状态变量。由结构图可以直接看出, 它们是相互独立的。选:\n\n$$\n\\begin{array}{l} x _ {1} = y _ {1}, \\quad x _ {2} = y _ {2} \\\\ x _ {3} = v _ {1} = \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}, \\quad x _ {4} = v _ {2} = \\frac {\\mathrm {d} y _ {2}}{\\mathrm {d} t} \\\\ \\end{array}\n$$\n\n根据牛顿定律，对于 $M_{1}$ ，有：",
+      "_chunk_first_line": "【例1-3】图1.10所示的机械运动模型中， $M_{1}$ 、 $M_{2}$ 为质量块（同时也为质量）， $K_{1}$ 、 $K_{2}$ 为弹簧，也为弹性系数， $B_{1}$ 、 $B_{2",
+      "_note_index": 26
+    },
+    {
+      "chunk_id": "chunk_0045",
+      "chapter": "绪论",
+      "topic": "Chunk 45 content",
+      "content": "根据牛顿定律，对于 $M_{1}$ ，有：\n\n$$\nM _ {1} \\frac {\\mathrm {d} v _ {1}}{\\mathrm {d} t} = K _ {2} \\left(y _ {2} - y _ {1}\\right) + B _ {2} \\left(\\frac {\\mathrm {d} y _ {2}}{\\mathrm {d} t} - \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}\\right) - K _ {1} y _ {1} - B _ {1} \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}\n$$\n\n对于 $M_2$ ，有：\n\n$$\nM _ {2} \\frac {\\mathrm {d} v _ {2}}{\\mathrm {d} t} = f - K _ {2} \\left(y _ {2} - y _ {1}\\right) - B _ {2} \\left(\\frac {\\mathrm {d} y _ {2}}{\\mathrm {d} t} - \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}\\right)\n$$\n\n把 $x_{1} = y_{1}$ ， $x_{2} = y_{2}$ ， $x_{3} = \\frac{\\mathrm{dy}_{1}}{\\mathrm{dt}}$ ， $x_{4} = v_{2} = \\frac{\\mathrm{dy}_{2}}{\\mathrm{dt}}$ 及 $u = f$ 代人上面两个式子，经整理可得：",
+      "summary": "根据牛顿定律，对于 $M_{1}$ ，有：  $$ M _ {1} \\frac {\\mathrm {d} v _ {1}}{\\mathrm {d} t} = K _ {2} \\left(y _ {2} - y _ {1}\\right) + B _ {2} \\left(\\frac {\\mathrm {...",
+      "tags": [
+        "general"
+      ],
+      "concept_links": {
+        "chunk_0044": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0043": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:47.191032",
+      "_full_chunk_text": "根据牛顿定律，对于 $M_{1}$ ，有：\n\n$$\nM _ {1} \\frac {\\mathrm {d} v _ {1}}{\\mathrm {d} t} = K _ {2} \\left(y _ {2} - y _ {1}\\right) + B _ {2} \\left(\\frac {\\mathrm {d} y _ {2}}{\\mathrm {d} t} - \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}\\right) - K _ {1} y _ {1} - B _ {1} \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}\n$$\n\n对于 $M_2$ ，有：\n\n$$\nM _ {2} \\frac {\\mathrm {d} v _ {2}}{\\mathrm {d} t} = f - K _ {2} \\left(y _ {2} - y _ {1}\\right) - B _ {2} \\left(\\frac {\\mathrm {d} y _ {2}}{\\mathrm {d} t} - \\frac {\\mathrm {d} y _ {1}}{\\mathrm {d} t}\\right)\n$$\n\n把 $x_{1} = y_{1}$ ， $x_{2} = y_{2}$ ， $x_{3} = \\frac{\\mathrm{dy}_{1}}{\\mathrm{dt}}$ ， $x_{4} = v_{2} = \\frac{\\mathrm{dy}_{2}}{\\mathrm{dt}}$ 及 $u = f$ 代人上面两个式子，经整理可得：",
+      "_chunk_first_line": "根据牛顿定律，对于 $M_{1}$ ，有：",
+      "_note_index": 27
+    },
+    {
+      "chunk_id": "chunk_0046",
+      "chapter": "绪论",
+      "topic": "Chunk 46 content",
+      "content": "把 $x_{1} = y_{1}$ ， $x_{2} = y_{2}$ ， $x_{3} = \\frac{\\mathrm{dy}_{1}}{\\mathrm{dt}}$ ， $x_{4} = v_{2} = \\frac{\\mathrm{dy}_{2}}{\\mathrm{dt}}$ 及 $u = f$ 代人上面两个式子，经整理可得：\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = x _ {3}. \\\\ \\dot {x} _ {2} = x _ {4} \\\\ \\dot {x} _ {3} = - \\frac {1}{M _ {1}} \\left(K _ {1} + K _ {2}\\right) x _ {1} + \\frac {K _ {2}}{M _ {1}} x _ {2} - \\frac {1}{M _ {1}} \\left(B _ {1} + B _ {2}\\right) x _ {3} + \\frac {B _ {2}}{M _ {1}} x _ {4} \\\\ \\dot {x} _ {4} = \\frac {K _ {2}}{M _ {2}} x _ {1} - \\frac {K _ {2}}{M _ {2}} x _ {2} + \\frac {B _ {2}}{M _ {2}} x _ {3} - \\frac {B _ {2}}{M _ {2}} x _ {4} + \\frac {1}{M _ {2}} f \\\\ \\end{array}\n$$\n\n写成矩阵形式：",
+      "summary": "把 $x_{1} = y_{1}$ ， $x_{2} = y_{2}$ ， $x_{3} = \\frac{\\mathrm{dy}_{1}}{\\mathrm{dt}}$ ， $x_{4} = v_{2} = \\frac{\\mathrm{dy}_{2}}{\\mathrm{dt}}$ 及 $u = f$ ...",
+      "tags": [
+        "矩阵"
+      ],
+      "concept_links": {
+        "chunk_0045": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0044": {
+          "type": "adjacent",
+          "shared_tags": [],
+          "retrieval_score": 2.4,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-12T23:13:52.196375",
+      "_full_chunk_text": "把 $x_{1} = y_{1}$ ， $x_{2} = y_{2}$ ， $x_{3} = \\frac{\\mathrm{dy}_{1}}{\\mathrm{dt}}$ ， $x_{4} = v_{2} = \\frac{\\mathrm{dy}_{2}}{\\mathrm{dt}}$ 及 $u = f$ 代人上面两个式子，经整理可得：\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = x _ {3}. \\\\ \\dot {x} _ {2} = x _ {4} \\\\ \\dot {x} _ {3} = - \\frac {1}{M _ {1}} \\left(K _ {1} + K _ {2}\\right) x _ {1} + \\frac {K _ {2}}{M _ {1}} x _ {2} - \\frac {1}{M _ {1}} \\left(B _ {1} + B _ {2}\\right) x _ {3} + \\frac {B _ {2}}{M _ {1}} x _ {4} \\\\ \\dot {x} _ {4} = \\frac {K _ {2}}{M _ {2}} x _ {1} - \\frac {K _ {2}}{M _ {2}} x _ {2} + \\frac {B _ {2}}{M _ {2}} x _ {3} - \\frac {B _ {2}}{M _ {2}} x _ {4} + \\frac {1}{M _ {2}} f \\\\ \\end{array}\n$$\n\n写成矩阵形式：",
+      "_chunk_first_line": "把 $x_{1} = y_{1}$ ， $x_{2} = y_{2}$ ， $x_{3} = \\frac{\\mathrm{dy}_{1}}{\\mathrm{dt}}$ ， $x_{4} = v_{2}",
+      "_note_index": 28
+    },
+    {
+      "chunk_id": "chunk_0047",
+      "chapter": "绪论",
+      "topic": "机械系统状态空间表达式 - 质量块弹簧阻尼系统矩阵形式",
+      "content": "写成矩阵形式：\n\n$$\n\\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{array}{c c c c} 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ - \\\\frac {1}{M _ {1}} (K _ {1} + K _ {2}) & \\\\frac {K _ {2}}{M _ {1}} & - \\\\frac {1}{M _ {1}} (B _ {1} + B _ {2}) & \\\\frac {B _ {2}}{M _ {1}} \\\\ \\frac {K _ {2}}{M _ {2}} & - \\\\frac {K _ {2}}{M _ {2}} & \\\\frac {B _ {2}}{M _ {2}} & - \\\\frac {B _ {2}}{M _ {2}} \\end{array} \\right) \\left( \\begin{array}{l} x _ {1} \\\\ x _ {2} \\\\ x _ {3} \\\\ x _ {4} \\end{array} \\right) + \\left( \\begin{array}{l} 0 \\\\ 0 \\\\ 0 \\\\ \\frac {1}{M _ {2}} \\end{array} \\right) f (1. 1 4)\n$$\n\n指定 $x_{1}, x_{2}$ 为输出，故：",
+      "summary": "【机械系统状态方程矩阵形式】状态变量x1,x2为位移，x3,x4为速度。系统矩阵A体现弹簧刚度(K1,K2)和阻尼(B1,B2)的耦合：-M1*(K1+K2) K2/M1 -(B1+B2)/M1 B2/M1 | K2/M2 -K2/M2 B2/M2 -B2/M2。输入向量含f/M2。输出为位移x1,x2。",
+      "tags": [
+        "state-space",
+        "mechanical-system",
+        "state-equation",
+        "mass-spring-damper",
+        "matrix-form"
+      ],
+      "concept_links": {
+        "chunk_0044": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 3.1,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0040": {
+          "type": "tag:state-equation",
+          "shared_tags": [
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 2.9,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-13T00:04:06.265318",
+      "_full_chunk_text": "写成矩阵形式：\n\n$$\n\\left( \\begin{array}{l} \\dot {x} _ {1} \\\\ \\dot {x} _ {2} \\\\ \\dot {x} _ {3} \\\\ \\dot {x} _ {4} \\end{array} \\right) = \\left( \\begin{array}{c c c c} 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ - \\frac {1}{M _ {1}} (K _ {1} + K _ {2}) & \\frac {K _ {2}}{M _ {1}} & - \\frac {1}{M _ {1}} (B _ {1} + B _ {2}) & \\frac {B _ {2}}{M _ {1}} \\\\ \\frac {K _ {2}}{M _ {2}} & - \\frac {K _ {2}}{M _ {2}} & \\frac {B _ {2}}{M _ {2}} & - \\frac {B _ {2}}{M _ {2}} \\end{array} \\right) \\left( \\begin{array}{l} x _ {1} \\\\ x _ {2} \\\\ x _ {3} \\\\ x _ {4} \\end{array} \\right) + \\left( \\begin{array}{l} 0 \\\\ 0 \\\\ 0 \\\\ \\frac {1}{M _ {2}} \\end{array} \\right) f (1. 1 4)\n$$\n\n指定 $x_{1}, x_{2}$ 为输出，故：",
+      "_chunk_first_line": "写成矩阵形式：",
+      "_note_index": 29
+    },
+    {
+      "chunk_id": "chunk_0048",
+      "chapter": "绪论",
+      "topic": "机械系统状态空间表达式 - 质量块弹簧阻尼系统输出方程",
+      "content": "指定 x1, x2 为输出，故：\n\ny1 = x1, y2 = x2\n\n【例1-4】机械旋转运动模型：\n- 转动惯量J，扭转轴刚性系数K，粘性阻尼系数B\n- 力矩T为输入\n- 状态变量：x1=θ (转角), x2=dθ/dt (角速度)\n\n状态方程：\ndot(x1) = x2\ndot(x2) = -K/J * x1 - B/J * x2 + 1/J * u\n\n矩阵形式：\ndot(x) = [0 1; -K/J -B/J] x + [0; 1/J] u\n\n输出方程(指定x1为输出)：\ny = x1 = [1, 0] x",
+      "summary": "【机械系统状态空间表达式】质量块-弹簧-阻尼系统输出方程：y=[1 0 0 0; 0 1 0 0]x。机械旋转运动模型：选择转角theta和角速度omega为状态变量，状态方程为x1dot=x2，x2dot=-K/J*x1-B/J*x2+1/J*u。输出方程y=x1。",
+      "tags": [
+        "state-space",
+        "mechanical-system",
+        "state-equation",
+        "output-equation",
+        "mass-spring-damper"
+      ],
+      "concept_links": {
+        "chunk_0047": {
+          "type": "tag:mechanical-system",
+          "shared_tags": [
+            "mechanical-system",
+            "mass-spring-damper",
+            "state-equation",
+            "state-space"
+          ],
+          "retrieval_score": 6.7,
+          "reason": "标签+邻近关联"
+        },
+        "chunk_0044": {
+          "type": "tag:state-space",
+          "shared_tags": [
+            "state-space"
+          ],
+          "retrieval_score": 2.8,
+          "reason": "标签+邻近关联"
+        }
+      },
+      "created_at": "2026-05-13T08:02:18.435369",
+      "_full_chunk_text": "指定 $x_{1}, x_{2}$ 为输出，故：\n\n$$\n\\binom {y _ {1}} {y _ {2}} = \\left( \\begin{array}{c c c c} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{array} \\right) \\binom {x _ {1}} {x _ {2}}\n$$\n\n【例1-4】试列写图1.11所示机械旋转运动模型的状态空间表达式。设转动惯量为 $J$ 。\n\n图中 $K$ 为扭转轴的刚性系数； $B$ 为粘性阻尼系数； $T$ 为施加于扭转轴上的力矩。\n\n解 选择扭转轴的转动角度 $\\theta$ 及其角速度 $\\omega$ 为状态变量，并令：\n\n$$\nx _ {1} = \\theta , \\quad x _ {2} = \\dot {\\theta}, \\quad u = T\n$$\n\n于是有\n\n![image](https://cdn-mineru.openxlab.org.cn/result/2026-05-05/e98daa7a-7f90-4060-9ef4-3ebaca29cd10/20585cf8da520e0dd0b60f35fa454a0570d20916152fa125f87dbe1a6f5578e3.jpg)\n\n图1.11 机械旋转运动模型\n\n$$\n\\begin{array}{l} \\dot {x} _ {1} = \\dot {\\theta} = x _ {2} \\\\ \\dot {x} _ {2} = \\dot {\\theta} \\\\ \\end{array}\n$$\n\n根据牛顿定律：\n\n$$\n\\ddot {\\theta} = - \\frac {K}{J} \\theta - \\frac {B}{J} \\dot {\\theta} + \\frac {1}{J} T\n$$\n\n从而有：",
+      "_chunk_first_line": "指定 $x_{1}, x_{2}$ 为输出，故：",
+      "_note_index": 30
+    }
+  ],
+  "source": {
+    "book1": "现代控制理论_第3版_刘豹_唐万生_第1册.md",
+    "book2": "现代控制理论_第3版_刘豹_唐万生_第2册.md",
+    "unified_chunks": "现代控制理论_统一_chunks.json",
+    "source_chunks_dir": "~/.hermes/alchemy/source_chunks/"
+  },
+  "recovery_info": {
+    "recovered_at": "2026-05-20",
+    "notes_before_recovery": 43,
+    "notes_with_content": 30,
+    "notes_discarded_empty": 13,
+    "recovery_action": "kept 30 valid notes, reset chunk_idx to 19, embedded full chunk text"
+  }
+}
