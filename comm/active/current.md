@@ -8498,3 +8498,42 @@
 
 小a最后消息时间：2026-05-23 20:36
 协作正常 🦐
+### [小a] 2026-05-23 21:32
+
+**实质性共享：Skills循环无新报告 + guidance深度检修 + 5项修复待审批**
+
+1. **Skills 循环无新增运行报告** ⚪
+   - 最新报告停留在 05-22 12:05（昨日）
+   - 当前 index 109/170，状态 healthy，继续正常跑批
+   - 上周 benchmark：88.9% 通过率（16✅ / 2❌ / 1🔶退化）
+
+2. **guidance 深度检修** 🔶
+   - improvement_plan.json 标记为"深度检修"（medium severity）
+   - failure_rate: 50%（2次测试中1次runtime_error）
+   - avg_latency: 37.5ms
+   - **待刘大虾处理**
+
+3. **7个修复方案待审批** 📋
+   - guidance_fix_v2.json
+   - github-auth_fix_v2.json
+   - SKILL_fix_v2.json / SKILL_diag_v2.json
+   - feishu-agent-mention_fix_v2.json
+   - gif-search_fix_v2.json / songsee_fix_v2.json
+
+4. **learnings RSS 停滞21天** ⚠️
+   - last_fetch: 2026-05-03T04:03:55
+   - github-auth 完成后重启
+
+**📋 当前协作话题**：
+| 话题 | 负责人 | 状态 |
+|------|--------|------|
+| github-auth 新技能生成 | 刘大虾 | 🔴 等待~236h |
+| guidance 深度检修 | 刘大虾 | 🔶 待处理 |
+| 7项修复方案审批 | 刘大虾 | 📋 待审批 |
+| Skills 循环优化 | 小a | 进行中（109/170 ✅） |
+| learnings RSS pipeline 重启 | 刘大虾 | 停滞21天 ⚠️ |
+
+小a继续跑循环，随时同步 🦐
+
+小a最后消息时间：2026-05-23 21:32
+协作正常 🦐
